@@ -20,13 +20,42 @@
         },
     ];
 
+    let benefits = [
+        {
+            title: 'Passionate',
+            description: 
+                'I am passionate about software development and I am always looking to learn new things.',
+        },
+        {
+            title: 'Team Player',
+            description: 
+                'I am a team player and I enjoy working with others to achieve a common goal.',
+        },
+        {
+            title: 'Problem Solver',
+            description: 
+                'I am a problem solver and I enjoy finding creative solutions to challenging problems.'
+        },
+        {
+            title: 'Detail Oriented',
+            description: 
+                'I am detail oriented and I take pride in my work.'
+        },
+    ];
+
 </script>
 
 <main class="flex flex-col flex-1 p-4">
-    <section id="IntoPage" class="grid grid-cols-1 lg:grid-cols-2 gap=10 py=8 sm:py-14">
-        <div class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10">
+    <section 
+        id="IntoPage" 
+        class="grid grid-cols-1 lg:grid-cols-2 gap=10 py=8 sm:py-14"
+    >
+        <div 
+            class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10"
+        >
             <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
-                Hi, I'm <span class="poppins text-violet-400">Andrey</span> Dimanchev <br/> Software
+                Hi, I'm <span class="poppins text-violet-400">Andrey</span> Dimanchev 
+                <br/> Software
                 <span class="poppins text-violet-400">Engineer</span>
             </h2>
             <p class="text-base sm:text-lg md:text-xl">
@@ -47,13 +76,17 @@
                 </div>
 
                 <h4 class="relative z-9">Get in touch &rarr;</h4>
+            </a>
         </div>
 
         <div class="relative shadow-2xl grid place-items-center">
-            <img src={"images/profile.png"} alt="Profile Image" class="object-cover z-[2] max-h-[70vh] mirror-image"/>
+            <img 
+                src={"images/profile.png"} 
+                alt="Profile Image" 
+                class="object-cover z-[2] max-h-[70vh] mirror-image"
+                />
         </div>
     </section>
-
 
 
     <section id="projects" class="py-20 lg:py-32 flex flex-col gap-24">
@@ -103,17 +136,96 @@
             after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4"
         >
 
-        <h6 class="text-lg sm:text-xl md:text-2xl">
-            Want to know more?
-        </h6>
-        <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-            A bit <span class="popppins text-violet-400">about me</span>
-        </h3>
+            <h6 class="text-lg sm:text-xl md:text-2xl">
+                Want to know more?
+            </h6>
+            <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
+                A bit <span class="popppins text-violet-400">about me</span>
+            </h3>
 
         </div>
 
-        <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl">I am...</p>
+        <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl">
+            I am...
+        </p>
         <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
+            {#each benefits as benefit, index}
+                <div class="flex gap-6 sm:gap-8">
+
+                <p 
+                    class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold"
+                >
+                    0{index + 1}
+                </p>
+                <div class="flex flex-col gap-6 sm:gap-8">
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl">
+                        {benefit.title}
+                    </h3>
+                    <p>{benefit.description}</p>
+                </div>
+            </div>
+        {/each}
+
+        </div>
+
+        <h5>The <span class="text-violet-400">Complete</span> Package</h5>
+
+        <div 
+            class="flex flex-col overflow-x-scroll gap-10 max-w-[990px] mx-auto w-full"
+        >
+
+            <table class="bg-white text-slate-700 rounded text-center">
+                <thead class="border-b border-solid border-slate-200">
+                    <tr class="">
+                        <th/>
+                        <th class="whitespace-nowrap p-2 px-4">Web Dev</th>
+                        <th class="whitespace-nowrap p-2 px-4">Embedded Dev</th>
+                        <th class="whitespace-nowrap p-2 px-4">Networks/Cloud Dev</th>
+                        <th class="whitespace-nowrap p-2 px-4">App Dev</th>
+                        <th class="whitespace-nowrap bg-violet-700 text-white p-4 px-8">Machine Learning Dev</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="border-b border-solid border-slate-200">
+                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">Languages</i></td>
+                        <td class="border border-solid border-white p-4">JavaScript, TypeScript, HTML, CSS</td>
+                        <td class="border border-solid border-white p-4">C, C++, Assembly</td>
+                        <td class="border border-solid border-white p-4">Python, Java</td>
+                        <td class="border border-solid border-white p-4">Python, C++</td>
+                    </tr>
+
+                    <tr class="border-b border-solid border-slate-200">
+                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">Skills</i></td>
+                        <td class="border border-solid border-white p-4">Networking</td>
+                        <td class="border border-solid border-white p-4">Arduino, Raspberry Pi</td>
+                        <td class="border border-solid border-white p-4">Django, Flask</td>
+                        <td class="border border-solid border-white p-4">TensorFlow, PyTorch</td>
+                    </tr>
+
+                    <tr class="border-b border-solid border-slate-200">
+                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">Tools</i></td>
+                        <td class="border border-solid border-white p-4">React, Svelte</td>
+                        <td class="border border-solid border-white p-4">Keil, Proteus</td>
+                        <td class="border border-solid border-white p-4">Azure, Docker</td>
+                        <td class="border border-solid border-white p-4">Jupyter, Colab</td>
+                    </tr>
+
+                    <tr class="border-b border-solid border-slate-200">
+                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">IDEs</i></td>
+                        <td class="border border-solid border-white p-4">VS Code, Docker Desktop</td>
+                        <td class="border border-solid border-white p-4">STM32Cube, Arduino, VS Code, Matlab</td>
+                        <td class="border border-solid border-white p-4">Firebase, AWS</td>
+                        <td class="border border-solid border-white p-4">Keras, Scikit-learn</td>
+                    </tr>
+
+                    <tr class="border-b border-solid border-slate-200">
+                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">Projects</i></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
 
         </div>
 
