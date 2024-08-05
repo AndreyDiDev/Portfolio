@@ -17,7 +17,7 @@
 
     </div>
 
-    <h3 class="fomt-medium text-xl sm:text-2xl md:text-3xl">{step.title}</h3>
+    <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">{step.title}</h3>
     <slot/>
     <div class="flex-1 flex justify-between gap-4 items-center">
         <div 
