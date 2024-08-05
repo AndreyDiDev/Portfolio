@@ -168,10 +168,10 @@
 
         </div>
 
-        <h5>The <span class="text-violet-400">Complete</span> Package</h5>
+        <h5 class="text-2xl sm:text-3xl font-semibold text-center poppins">The <span class="text-violet-400 poppins">Complete</span> Package</h5>
 
         <div 
-            class="flex flex-col overflow-x-scroll gap-10 max-w-[990px] mx-auto w-full"
+            class="flex flex-col overflow-x-scroll overflow-hidden gap-10 max-w-[900px] max-h-[1000px] mx-auto w-full h-full"
         >
 
             <table class="bg-white text-slate-700 rounded text-center">
@@ -188,45 +188,54 @@
 
                 <tbody>
                     <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">Languages</i></td>
-                        <td class="border border-solid border-white p-4">JavaScript, TypeScript, HTML, CSS</td>
-                        <td class="border border-solid border-white p-4">C, C++, Assembly</td>
-                        <td class="border border-solid border-white p-4">Python, Java</td>
-                        <td class="border border-solid border-white p-4">Python, C++</td>
+                        <td><i class="border border-solid border-white pl-4
+                        pr-8 py-4 font-semibold text-sm whitespace-nowrap">Languages</i></td>
+                        <td class="border border-solid border-gray p-4">JavaScript, TypeScript, HTML, CSS</td>
+                        <td class="border border-solid border-gray p-4">C, C++, Assembly</td>
+                        <td class="border border-solid border-gray p-4">Python, Java</td>
+                        <td class="border border-solid border-gray p-4">Python, C++</td>
                     </tr>
 
                     <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">Skills</i></td>
-                        <td class="border border-solid border-white p-4">Networking</td>
-                        <td class="border border-solid border-white p-4">Arduino, Raspberry Pi</td>
-                        <td class="border border-solid border-white p-4">Django, Flask</td>
-                        <td class="border border-solid border-white p-4">TensorFlow, PyTorch</td>
+                        <td><i class="border border-solid border-white pl-4 
+                        pr-8 py-4 font-semibold text-sm whitespace-nowrap">Skills</i></td>
+                        <td class="border border-solid border-gray p-4">Networking</td>
+                        <td class="border border-solid border-gray p-4">Arduino, Raspberry Pi</td>
+                        <td class="border border-solid border-gray p-4">Django, Flask</td>
+                        <td class="border border-solid border-gray p-4">TensorFlow, PyTorch</td>
                     </tr>
 
                     <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">Tools</i></td>
-                        <td class="border border-solid border-white p-4">React, Svelte</td>
-                        <td class="border border-solid border-white p-4">Keil, Proteus</td>
-                        <td class="border border-solid border-white p-4">Azure, Docker</td>
-                        <td class="border border-solid border-white p-4">Jupyter, Colab</td>
+                        <td><i class="border border-solid border-white pl-4 
+                        pr-8 py-4 font-semibold text-sm whitespace-nowrap">Tools</i></td>
+                        <td class="border border-solid border-gray p-4">React, Svelte</td>
+                        <td class="border border-solid border-gray p-4">Keil, Proteus</td>
+                        <td class="border border-solid border-gray p-4">Azure, Docker</td>
+                        <td class="border border-solid border-gray p-4">Jupyter, Colab</td>
                     </tr>
 
                     <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">IDEs</i></td>
-                        <td class="border border-solid border-white p-4">VS Code, Docker Desktop</td>
-                        <td class="border border-solid border-white p-4">STM32Cube, Arduino, VS Code, Matlab</td>
-                        <td class="border border-solid border-white p-4">Firebase, AWS</td>
-                        <td class="border border-solid border-white p-4">Keras, Scikit-learn</td>
+                        <td><i class="border border-solid border-white pl-4
+                        pr-8 py-4 font-semibold text-sm whitespace-nowrap">IDEs</i></td>
+                        <td class="border border-solid border-gray p-4">VS Code, Docker Desktop</td>
+                        <td class="border border-solid border-gray p-4">STM32Cube, Arduino, VS Code, Matlab</td>
+                        <td class="border border-solid border-gray p-4">Firebase, AWS</td>
+                        <td class="border border-solid border-gray p-4">Keras, Scikit-learn</td>
                     </tr>
 
                     <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4 pr-8 py-4 font-semibold">Projects</i></td>
+                        <td><i class="border border-solid border-white pl-4
+                        pr-8 py-4 font-semibold text-sm whitespace-nowrap">Projects</i></td>
                     </tr>
 
                 </tbody>
 
             </table>
 
+        </div>
+
+        <div class="mx-auto -mt-12 italic sm:hidden opacity-50">
+            <p>Scroll to see more &rarr;</p>
         </div>
 
     </section>
