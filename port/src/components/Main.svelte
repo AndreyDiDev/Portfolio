@@ -140,7 +140,7 @@
                 Want to know more?
             </h6>
             <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-                A bit <span class="popppins text-violet-400">about me</span>
+                A bit <span class="poppins text-violet-400">about me</span>
             </h3>
 
         </div>
@@ -236,6 +236,10 @@
 
         <div class="mx-auto -mt-12 italic sm:hidden opacity-50">
             <p>Scroll to see more &rarr;</p>
+        </div>
+
+        <div class="text-center poppins text-violet-400 text-slate-950 text-2xl sm:text-3xl">
+            <p>Why not invest?</p>
         </div>
 
     </section>
