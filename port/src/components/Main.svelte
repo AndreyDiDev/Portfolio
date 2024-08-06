@@ -115,7 +115,7 @@
             <img 
                 src={"images/profile3.png"} 
                 alt="Profile Image" 
-                class="object-cover z-[2] max-h-[70vh] enlarge-on-hover scaled-image"
+                class="object-cover z-[2] max-h-[70vh] "
                 />
         </div>
     </section>
