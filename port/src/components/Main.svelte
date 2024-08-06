@@ -1,4 +1,5 @@
 <script>
+    import { scale } from 'svelte/transition';
     import Step from './Step.svelte';
     
     
@@ -47,7 +48,7 @@
 
 <main class="flex flex-col flex-1 p-4">
     <section 
-        id="IntoPage" 
+        id="IntroPage" 
         class="grid grid-cols-1 lg:grid-cols-2 gap=10 py=8 sm:py-14"
     >
         <div 
@@ -64,9 +65,9 @@
                 create modern user interfaces that are a joy to use.
             </p>
 
-            <a  
+            <a 
             
-                class="blueShadow mx-auto lg:mr-auto text-base sm:text-lg md:text-xl poppins
+                class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins
                 relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950"
                 cursor-pointer
                 href="https://www.linkedin.com/in/andreydimanchev/" target="_blank">
@@ -79,31 +80,23 @@
             </a>
         </div>
 
-        <div class="relative shadow-2xl grid place-items-center">
+        <div class="relative shadow-4xl grid place-items-center">
             <img 
-                src={"images/profile.png"} 
+                src={"images/profile3.png"} 
                 alt="Profile Image" 
-                class="object-cover z-[2] max-h-[70vh] mirror-image"
+                class="object-cover z-[2] max-h-[70vh] enlarge-on-hover scaled-image"
                 />
         </div>
     </section>
 
 
-    <section id="projects" class="py-20 lg:py-32 flex flex-col gap-24">
-        <div class="flex flex-col gap-2 text-center">
-            <h6 class="text-lg sm:text-xl md:text-2xl">
+    <section id="projects" class="py-40 lg:py-52 flex flex-col gap-24">
+        <div class="flex flex-col text-center">
+            <h1 class="text-lg sm:text-xl md:text-2xl">
                 A few of my projects
-            </h6>
-            <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-                Curious to <span class="poppins text-violet-400">see more?</span>
-            </h3>
+            </h1>
         </div>
-        <a href="https://github.com/AndreyDiDev" target="_blank" class=" mx-auto px-4 py-2 rounded-md border border-solid border-white flex items-center gap-2 -mb-4 sm:-mb-0
-            -mt-10 hover:border-violet-700 duration-200 ">
-                Check out my GitHub &rarr;
-        </a>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-10">
             <Step step={steps[0]}>
                 <p>Attitude and Heading reference system using Madgwick's quaternion based algorithm to filter a 9 dof IMU
                     <strong class="text-violet-400">C++</strong>
@@ -123,6 +116,16 @@
             </Step>
 
         </div>
+
+        <div class="flex flex-col gap-2 text-center">
+            <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
+                Curious to <span class="poppins text-violet-400">see more?</span>
+            </h3>
+        </div>
+        <a href="https://github.com/AndreyDiDev" target="_blank" class=" mx-auto px-4 py-2 rounded-md border border-solid border-white flex items-center gap-2 -mb-4 sm:-mb-0
+            -mt-10 hover:border-violet-700 duration-200 ">
+                Check out my GitHub &rarr;
+        </a>
     </section>
 
     <section 
@@ -244,10 +247,19 @@
 
     </section>
 
+    <style>
+        .scaled-image {
+            transform: scale(1.1) rotateY(180deg);
+        }
+    </style>
 
     <style>
-        .mirror-image {
-            transform: scaleX(-1);
+        .enlarge-on-hover {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .enlarge-on-hover:hover {
+            transform: scale(1.4);
         }
     </style>
 
