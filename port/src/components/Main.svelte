@@ -44,6 +44,37 @@
         },
     ];
 
+    // changing text
+    import { onMount } from 'svelte';
+
+    let currentText = "";
+    let texts = ["Software", "Web", "Machine Learning", "Cloud/Network"];
+    let index = 0;
+    let isDeleting = false;
+    let typingSpeed = 150; // Speed of typing in milliseconds
+
+    function typeWriter() {
+        const fullText = texts[index];
+        if (isDeleting) {
+            currentText = fullText.substring(0, currentText.length - 1);
+        } else {
+            currentText = fullText.substring(0, currentText.length + 1);
+        }
+
+        if (!isDeleting && currentText === fullText) {
+            setTimeout(() => isDeleting = true, 2000); // Pause before deleting
+        } else if (isDeleting && currentText === "") {
+            isDeleting = false;
+            index = (index + 1) % texts.length;
+        }
+
+        setTimeout(typeWriter, isDeleting ? typingSpeed / 2 : typingSpeed);
+    }
+
+    onMount(() => {
+        typeWriter();
+    });
+
 </script>
 
 <main class="flex flex-col flex-1 p-4">
@@ -56,7 +87,7 @@
         >
             <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
                 Hi, I'm <span class="poppins text-violet-400">Andrey</span> Dimanchev 
-                <br/> Software
+                <br/> {currentText}
                 <span class="poppins text-violet-400">Engineer</span>
             </h2>
             <p class="text-base sm:text-lg md:text-xl">
@@ -262,5 +293,21 @@
             transform: scale(1.4);
         }
     </style>
+
+<style>
+    .typing-animation {
+        border-right: 2px solid;
+        animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+        from, to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: black;
+        }
+    }
+</style>
 
 </main>
