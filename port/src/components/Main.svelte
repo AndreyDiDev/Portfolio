@@ -7,17 +7,26 @@
         {
             title: 'UKF',
             image: 'images/project1.png',
-            link: 'https://github.com/AndreyDiDev/UnscentedKalmanFilter'
+            link: 'https://github.com/AndreyDiDev/UnscentedKalmanFilter',
+            tags: ["Machine Learning"]
         },
         {
             title: 'Tic Tac Toe in Assembly',
             image: 'images/project2.png',
-            link: 'https://github.com/AndreyDiDev/TicTacToeAssembly'
+            link: 'https://github.com/AndreyDiDev/TicTacToeAssembly',
+            tags: ["Low-Level coding", "Assembly"]
         },
         {
             title: 'Madgwick AHRS Filter',
             image: 'images/project3.png',
-            link: 'https://github.com/AndreyDiDev/MadgwickAHRS'
+            link: 'https://github.com/AndreyDiDev/MadgwickAHRS',
+            tags: ["Sensor Fusion and Filtering", "C++"]
+        },
+        {
+            title: 'Portfolio Website',
+            image: 'images/project3.png',
+            link: 'https://github.com/AndreyDiDev/Portfolio',
+            tags: ["Web Dev", "Svelte"]
         },
     ];
 
@@ -44,7 +53,7 @@
         },
     ];
 
-    // changing text
+    // changing text ----------------------------------------------------------------- <start>
     import { onMount } from 'svelte';
 
     let currentText = "";
@@ -75,7 +84,44 @@
         typeWriter();
     });
 
+    // ------------------------------------------------------------------------------ changing text <end>
+
+    let tags = ["All", "Web Dev", "Machine Learning", "Cloud/Network"];
+    let selectedTag = "Web Dev";
+    let selectedTags = [];
+
+    $: filteredProjects = selectedTags === "All" ? steps : steps.filter(step => step.tags.includes(selectedTag));
+
+    function selectTag(tag) {
+        if (selectedTags.includes(tag)) {
+            selectedTags = selectedTags.filter(t => t !== tag);
+        } else {
+            selectedTags = [...selectedTags, tag];
+        }
+    }
 </script>
+
+<!-- script end -------------------------------------------------------------------------------->
+
+<style>
+    .tag-button {
+        cursor: pointer;
+        padding: 0.5em 1em;
+        margin: 0.5em;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        transition: background-color 0.3s;
+    }
+
+    .tag-button:hover {
+        background-color: #ddd;
+    }
+
+    .tag-button.active {
+        background-color: #007bff;
+        color: white;
+    }
+</style>
 
 <main class="flex flex-col flex-1 p-4">
     <section 
@@ -93,7 +139,7 @@
             <p class="text-base sm:text-lg md:text-xl">
                 I specialize in building websites and web applications that are fast, responsive, and accessible.
                 Using <span class="text-violet-400">React</span> and <span class="text-violet-400">Svelte</span> to
-                create modern user interfaces that are a joy to use.
+                create modern user interfaces that are a pleasure to use.
             </p>
 
             <a 
@@ -118,15 +164,40 @@
                 class="object-cover z-[2] max-h-[70vh] "
                 />
         </div>
+
+        <section id="tags" class="py-4 flex justify-center">
+            {#each tags as tag}
+                <button 
+                    class="tag-button {selectedTags === tag ? 'active' : ''}" 
+                    on:click={() => selectTag(tag)}>
+                    {tag}
+                </button>
+            {/each}
+        </section>
+        
+        <section id="selected-tags" class="py-4 flex justify-center">
+            <div>
+                <h2>Selected Tags:</h2>
+                <ul>
+                    {#each selectedTags as tag}
+                        <li>{tag}</li>
+                    {/each}
+                </ul>
+            </div>
+        </section>
+
+
     </section>
 
 
     <section id="projects" class="py-40 lg:py-52 flex flex-col gap-24">
+
         <div class="flex flex-col text-center">
             <h1 class="text-lg sm:text-xl md:text-2xl">
                 A few of my projects
             </h1>
         </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-10">
             <Step step={steps[0]}>
                 <p>Attitude and Heading reference system using Madgwick's quaternion based algorithm to filter a 9 dof IMU
@@ -147,6 +218,15 @@
             </Step>
 
         </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {#each filteredProjects as project}
+              <div class="project-card p-4 border rounded shadow">
+                <h2 class="text-xl font-bold">{project.title}</h2>
+                <p class="text-sm">Tags: {project.tags.join(', ')}</p>
+              </div>
+            {/each}
+          </div>
 
         <div class="flex flex-col gap-2 text-center">
             <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
@@ -278,21 +358,22 @@
 
     </section>
 
-    <style>
-        .scaled-image {
-            transform: scale(1.1) rotateY(180deg);
-        }
-    </style>
+    <!-- styles ------------------------------------------------------------------------------------- -->
+<style>
+    .scaled-image {
+        transform: scale(1.1) rotateY(180deg);
+    }
+</style>
 
-    <style>
-        .enlarge-on-hover {
-            transition: transform 0.5s ease-in-out;
-        }
+<style>
+    .enlarge-on-hover {
+        transition: transform 0.5s ease-in-out;
+    }
 
-        .enlarge-on-hover:hover {
-            transform: scale(1.4);
-        }
-    </style>
+    .enlarge-on-hover:hover {
+        transform: scale(1.4);
+    }
+</style>
 
 <style>
     .typing-animation {
@@ -310,4 +391,25 @@
     }
 </style>
 
+<style>
+    .tag {
+      cursor: pointer;
+      padding: 0.5em 1em;
+      margin: 0.5em;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s;
+    }
+  
+    .tag:hover {
+      background-color: #ddd;
+    }
+  
+    .tag.active {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+
+    <!-- styles end -->
 </main>
