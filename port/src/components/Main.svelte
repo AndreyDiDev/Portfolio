@@ -86,11 +86,12 @@
 
     // ------------------------------------------------------------------------------ changing text <end>
 
-    let tags = ["All", "Web Dev", "Machine Learning", "Cloud/Network"];
-    let selectedTag = "Web Dev";
+        let tags = ["All", "Web Dev", "Machine Learning", "Cloud/Network"];
     let selectedTags = [];
 
-    $: filteredProjects = selectedTags === "All" ? steps : steps.filter(step => step.tags.includes(selectedTag));
+    $: filteredProjects = selectedTags.length === 0 || selectedTags.includes("All") 
+        ? steps 
+        : steps.filter(step => selectedTags.some(tag => step.tags.includes(tag)));
 
     function selectTag(tag) {
         if (selectedTags.includes(tag)) {
@@ -108,18 +109,20 @@
         cursor: pointer;
         padding: 0.5em 1em;
         margin: 0.5em;
-        border-radius: 5px;
-        background-color: #f0f0f0;
+        border-radius: 9px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
         transition: background-color 0.3s;
     }
 
     .tag-button:hover {
-        background-color: #ddd;
+        background-color: #001f61;
+        color: rgb(123, 157, 219);
     }
 
     .tag-button.active {
-        background-color: #007bff;
-        color: white;
+        background-color: #4602ff;
+        color: rgb(255, 255, 255);
     }
 </style>
 
@@ -168,7 +171,7 @@
         <section id="tags" class="py-4 flex justify-center">
             {#each tags as tag}
                 <button 
-                    class="tag-button {selectedTags === tag ? 'active' : ''}" 
+                    class="tag-button {selectedTags.includes(tag) ? 'active' : ''}" 
                     on:click={() => selectTag(tag)}>
                     {tag}
                 </button>
