@@ -7,17 +7,57 @@
         {
             title: 'UKF',
             image: 'images/project1.png',
-            link: 'https://github.com/AndreyDiDev/UnscentedKalmanFilter'
+            description: 'Unscented Kalman Filter for filtering the position of our rocket, and fusing sensors (Barometer, GPS, IMU) to get a more accurate position estimate',
+            link: 'https://github.com/AndreyDiDev/UnscentedKalmanFilter',
+            tags: ["Machine Learning"]
         },
         {
-            title: 'Tic Tac Toe in Assembly',
+            title: 'Tic Tac Toe',
             image: 'images/project2.png',
-            link: 'https://github.com/AndreyDiDev/TicTacToeAssembly'
+            description: 'Classic Tic Tac Toe game implemented in Assembly language for the 8086 processor',
+            link: 'https://github.com/AndreyDiDev/TicTacToeAssembly',
+            tags: ["Low-Level coding", "Assembly"]
         },
         {
-            title: 'Madgwick AHRS Filter',
+            title: 'Madgwick Filter',
             image: 'images/project3.png',
-            link: 'https://github.com/AndreyDiDev/MadgwickAHRS'
+            link: 'https://github.com/AndreyDiDev/MadgwickAHRS',
+            description: 'Attitude and Heading reference system using Madgwick\'s quaternion based algorithm to filter a 9 dof IMU',
+            tags: ["Sensor Fusion and Filtering", "C++"]
+        },
+        {
+            title: 'Portfolio Website',
+            image: 'images/project3.png',
+            link: 'https://github.com/AndreyDiDev/Portfolio',
+            description: 'This website',
+            tags: ["Web Dev", "Svelte"]
+        },
+        {
+            title: 'SPI Driver',
+            image: 'images/project3.png',
+            link: 'https://github.com/AndreyDiDev/SPI_Driver_Repo',
+            description: 'SPI Driver for an ADC',
+            tags: ["Embedded", "SPI", "C++"]
+        },
+        {
+            title: 'Financial Manager Website',
+            image: 'images/project3.png',
+            link: 'https://github.com/Nicholasm24/calhacksWinnerPOV',
+            description: '24 hour hackathon project, CalgaryHacks',
+            tags: ["Web Dev", "JS", "React", "CSS", "HTML"]
+        },
+        {
+            title: 'Schedule Helper Website',
+            image: 'images/project3.png',
+            link: 'https://github.com/AndreyDiDev/CalgaryHacksProjectX',
+            description: '24 hour hackathon project, CalgaryHacks',
+            tags: ["Web Dev", "JS", "Firebase", "CSS", "HTML"]
+        },
+        {
+            title: 'Android App',
+            image: 'images/project3.png',
+            description: 'Building Android App with elegant UI and Firebase backend',
+            tags: ["App Dev", "Java", "Firebase", "XML", "Kotlin"]
         },
     ];
 
@@ -44,7 +84,7 @@
         },
     ];
 
-    // changing text
+    // changing text ----------------------------------------------------------------- <start>
     import { onMount } from 'svelte';
 
     let currentText = "";
@@ -75,7 +115,47 @@
         typeWriter();
     });
 
+    // ------------------------------------------------------------------------------ changing text <end>
+
+    let tags = ["All", "Web Dev", "Machine Learning", "Cloud/Network"];
+    let selectedTags = [];
+
+    $: filteredProjects = selectedTags.length === 0 || selectedTags.includes("All") 
+        ? steps 
+        : steps.filter(step => selectedTags.some(tag => step.tags.includes(tag)));
+
+    function selectTag(tag) {
+        if (selectedTags.includes(tag)) {
+            selectedTags = selectedTags.filter(t => t !== tag);
+        } else {
+            selectedTags = [...selectedTags, tag];
+        }
+    }
 </script>
+
+<!-- script end -------------------------------------------------------------------------------->
+
+<style>
+    .tag-button {
+        cursor: pointer;
+        padding: 0.5em 1em;
+        margin: 0.5em;
+        border-radius: 9px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        transition: background-color 0.3s;
+    }
+
+    .tag-button:hover {
+        background-color: #001f61;
+        color: rgb(123, 157, 219);
+    }
+
+    .tag-button.active {
+        background-color: #4602ff;
+        color: rgb(255, 255, 255);
+    }
+</style>
 
 <main class="flex flex-col flex-1 p-4">
     <section 
@@ -91,9 +171,10 @@
                 <span class="poppins text-violet-400">Engineer</span>
             </h2>
             <p class="text-base sm:text-lg md:text-xl">
-                I specialize in building websites and web applications that are fast, responsive, and accessible.
-                Using <span class="text-violet-400">React</span> and <span class="text-violet-400">Svelte</span> to
-                create modern user interfaces that are a joy to use.
+                I thrive on unraveling complex problems. 
+                I've invested myself in areas like <span class="font-semibold text-violet-400">Web Dev, Machine 
+                Learning, Embedded Engineering, Cloud platforms...</span>   
+                <br> To every project, I bring <span class="text-violet-400">passion and innovation</span>.
             </p>
 
             <a 
@@ -115,19 +196,44 @@
             <img 
                 src={"images/profile3.png"} 
                 alt="Profile Image" 
-                class="object-cover z-[2] max-h-[70vh] enlarge-on-hover scaled-image"
+                class="object-cover z-[2] max-h-[70vh] "
                 />
         </div>
+        
+        <!-- <section id="selected-tags" class="py-4 flex justify-center">
+            <div>
+                <h2>Selected Tags:</h2>
+                <ul>
+                    {#each selectedTags as tag}
+                        <li>{tag}</li>
+                    {/each}
+                </ul>
+            </div>
+        </section> -->
+
+
     </section>
 
 
-    <section id="projects" class="py-40 lg:py-52 flex flex-col gap-24">
+    <section id="projects" class="py-40 lg:py-52 flex flex-col gap-20">
+        
+        <section id="tags" class="py-4 flex justify-center">
+            {#each tags as tag}
+                <button 
+                    class="tag-button {selectedTags.includes(tag) ? 'active' : ''}" 
+                    on:click={() => selectTag(tag)}>
+                    {tag}
+                </button>
+            {/each}
+        </section>
+
         <div class="flex flex-col text-center">
             <h1 class="text-lg sm:text-xl md:text-2xl">
                 A few of my projects
             </h1>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-10">
+
+        <!-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-10">
             <Step step={steps[0]}>
                 <p>Attitude and Heading reference system using Madgwick's quaternion based algorithm to filter a 9 dof IMU
                     <strong class="text-violet-400">C++</strong>
@@ -146,7 +252,16 @@
                 </p>
             </Step>
 
-        </div>
+        </div> -->
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {#each filteredProjects as project}
+                <Step step={project}>
+                    <p class="text-l font-bold">{project.description}</p>
+                    <strong class="text-violet-400">Tags: {project.tags.join(', ')}</strong>
+                </Step>
+            {/each}
+          </div>
 
         <div class="flex flex-col gap-2 text-center">
             <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
@@ -278,21 +393,22 @@
 
     </section>
 
-    <style>
-        .scaled-image {
-            transform: scale(1.1) rotateY(180deg);
-        }
-    </style>
+    <!-- styles ------------------------------------------------------------------------------------- -->
+<style>
+    .scaled-image {
+        transform: scale(1.1) rotateY(180deg);
+    }
+</style>
 
-    <style>
-        .enlarge-on-hover {
-            transition: transform 0.5s ease-in-out;
-        }
+<style>
+    .enlarge-on-hover {
+        transition: transform 0.5s ease-in-out;
+    }
 
-        .enlarge-on-hover:hover {
-            transform: scale(1.4);
-        }
-    </style>
+    .enlarge-on-hover:hover {
+        transform: scale(1.4);
+    }
+</style>
 
 <style>
     .typing-animation {
@@ -310,4 +426,25 @@
     }
 </style>
 
+<style>
+    .tag {
+      cursor: pointer;
+      padding: 0.5em 1em;
+      margin: 0.5em;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s;
+    }
+  
+    .tag:hover {
+      background-color: #ddd;
+    }
+  
+    .tag.active {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+
+    <!-- styles end -->
 </main>

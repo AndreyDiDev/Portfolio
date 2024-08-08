@@ -1,8 +1,23 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+// export default {
+//   content: ['./src/**/*.{html,js,svelte,ts}'],
+//   theme: {
+//     extend: {}
+//   },
+//   plugins: [
+//     '@tailwindcss/jit',
+//   ]
+// };
+
+module.exports = {
+  purge:['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
-};
+  variants: {
+    extend: {},
+  },
+  plugins: [
+    '@tailwindcss/jit',
+  ],
+}
