@@ -7,26 +7,57 @@
         {
             title: 'UKF',
             image: 'images/project1.png',
+            description: 'Unscented Kalman Filter for filtering the position of our rocket, and fusing sensors (Barometer, GPS, IMU) to get a more accurate position estimate',
             link: 'https://github.com/AndreyDiDev/UnscentedKalmanFilter',
             tags: ["Machine Learning"]
         },
         {
-            title: 'Tic Tac Toe in Assembly',
+            title: 'Tic Tac Toe',
             image: 'images/project2.png',
+            description: 'Classic Tic Tac Toe game implemented in Assembly language for the 8086 processor',
             link: 'https://github.com/AndreyDiDev/TicTacToeAssembly',
             tags: ["Low-Level coding", "Assembly"]
         },
         {
-            title: 'Madgwick AHRS Filter',
+            title: 'Madgwick Filter',
             image: 'images/project3.png',
             link: 'https://github.com/AndreyDiDev/MadgwickAHRS',
+            description: 'Attitude and Heading reference system using Madgwick\'s quaternion based algorithm to filter a 9 dof IMU',
             tags: ["Sensor Fusion and Filtering", "C++"]
         },
         {
             title: 'Portfolio Website',
             image: 'images/project3.png',
             link: 'https://github.com/AndreyDiDev/Portfolio',
+            description: 'This website',
             tags: ["Web Dev", "Svelte"]
+        },
+        {
+            title: 'SPI Driver',
+            image: 'images/project3.png',
+            link: 'https://github.com/AndreyDiDev/SPI_Driver_Repo',
+            description: 'SPI Driver for an ADC',
+            tags: ["Embedded", "SPI", "C++"]
+        },
+        {
+            title: 'Financial Manager Website',
+            image: 'images/project3.png',
+            link: 'https://github.com/Nicholasm24/calhacksWinnerPOV',
+            description: '24 hour hackathon project, CalgaryHacks',
+            tags: ["Web Dev", "JS", "React", "CSS", "HTML"]
+        },
+        {
+            title: 'Schedule Helper Website',
+            image: 'images/project3.png',
+            link: 'https://github.com/AndreyDiDev/CalgaryHacksProjectX',
+            description: '24 hour hackathon project, CalgaryHacks',
+            tags: ["Web Dev", "JS", "Firebase", "CSS", "HTML"]
+        },
+        {
+            title: 'Android App',
+            image: 'images/project3.png',
+            description: 'Building Android App with elegant UI and Firebase backend',
+            tags: ["App Dev", "Java", "Firebase", "XML", "Kotlin"]
         },
     ];
 
@@ -86,7 +117,7 @@
 
     // ------------------------------------------------------------------------------ changing text <end>
 
-        let tags = ["All", "Web Dev", "Machine Learning", "Cloud/Network"];
+    let tags = ["All", "Web Dev", "Machine Learning", "Cloud/Network"];
     let selectedTags = [];
 
     $: filteredProjects = selectedTags.length === 0 || selectedTags.includes("All") 
@@ -140,9 +171,10 @@
                 <span class="poppins text-violet-400">Engineer</span>
             </h2>
             <p class="text-base sm:text-lg md:text-xl">
-                I specialize in building websites and web applications that are fast, responsive, and accessible.
-                Using <span class="text-violet-400">React</span> and <span class="text-violet-400">Svelte</span> to
-                create modern user interfaces that are a pleasure to use.
+                I thrive on unraveling complex problems. 
+                I've invested myself in areas like <span class="font-semibold text-violet-400">Web Dev, Machine 
+                Learning, Embedded Engineering, Cloud platforms...</span>   
+                <br> To every project, I bring <span class="text-violet-400">passion and innovation</span>.
             </p>
 
             <a 
@@ -167,7 +199,24 @@
                 class="object-cover z-[2] max-h-[70vh] "
                 />
         </div>
+        
+        <!-- <section id="selected-tags" class="py-4 flex justify-center">
+            <div>
+                <h2>Selected Tags:</h2>
+                <ul>
+                    {#each selectedTags as tag}
+                        <li>{tag}</li>
+                    {/each}
+                </ul>
+            </div>
+        </section> -->
 
+
+    </section>
+
+
+    <section id="projects" class="py-40 lg:py-52 flex flex-col gap-20">
+        
         <section id="tags" class="py-4 flex justify-center">
             {#each tags as tag}
                 <button 
@@ -177,23 +226,6 @@
                 </button>
             {/each}
         </section>
-        
-        <section id="selected-tags" class="py-4 flex justify-center">
-            <div>
-                <h2>Selected Tags:</h2>
-                <ul>
-                    {#each selectedTags as tag}
-                        <li>{tag}</li>
-                    {/each}
-                </ul>
-            </div>
-        </section>
-
-
-    </section>
-
-
-    <section id="projects" class="py-40 lg:py-52 flex flex-col gap-24">
 
         <div class="flex flex-col text-center">
             <h1 class="text-lg sm:text-xl md:text-2xl">
@@ -201,7 +233,7 @@
             </h1>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-10">
+        <!-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-10">
             <Step step={steps[0]}>
                 <p>Attitude and Heading reference system using Madgwick's quaternion based algorithm to filter a 9 dof IMU
                     <strong class="text-violet-400">C++</strong>
@@ -220,14 +252,14 @@
                 </p>
             </Step>
 
-        </div>
+        </div> -->
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {#each filteredProjects as project}
-              <div class="project-card p-4 border rounded shadow">
-                <h2 class="text-xl font-bold">{project.title}</h2>
-                <p class="text-sm">Tags: {project.tags.join(', ')}</p>
-              </div>
+                <Step step={project}>
+                    <p class="text-l font-bold">{project.description}</p>
+                    <strong class="text-violet-400">Tags: {project.tags.join(', ')}</strong>
+                </Step>
             {/each}
           </div>
 
