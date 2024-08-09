@@ -9,7 +9,7 @@
             image: 'images/project1.png',
             description: 'Unscented Kalman Filter for filtering the position of our rocket, and fusing sensors (Barometer, GPS, IMU) to get a more accurate position estimate',
             link: 'https://github.com/AndreyDiDev/UnscentedKalmanFilter',
-            tags: ["Machine Learning", "C++", "Sensor Fusion and Filtering", "Embedded"]
+            tags: ["Machine Learning", "C++", "Sensor Fusion and Filtering", "Embedded", "Experience/Work"]
         },
         {
             title: 'Tic Tac Toe',
@@ -23,7 +23,7 @@
             image: 'images/project3.png',
             link: 'https://github.com/AndreyDiDev/MadgwickAHRS',
             description: 'Attitude and Heading reference system using Madgwick\'s quaternion based algorithm to filter a 9 dof IMU',
-            tags: ["Sensor Fusion and Filtering", "C++", "Embedded"]
+            tags: ["Sensor Fusion and Filtering", "C++", "Embedded", "Experience/Work"]
         },
         {
             title: 'Portfolio Website',
@@ -37,7 +37,7 @@
             image: 'images/project3.png',
             link: 'https://github.com/AndreyDiDev/SPI_Driver_Repo',
             description: 'SPI Driver for an ADC',
-            tags: ["Embedded", "SPI", "C++"]
+            tags: ["Embedded", "SPI", "C++", "STM32CubeMX", "Experience/Work"]
         },
         {
             title: 'Financial Manager Website',
@@ -58,6 +58,25 @@
             image: 'images/project3.png',
             description: 'Building Android App with elegant UI and Firebase backend',
             tags: ["App Dev", "Java", "Firebase", "XML", "Kotlin"]
+        },
+        {
+            title: 'Machine Learning and Data Science Workshop Director',
+            image: 'images/project3.png',
+            description: 'At the Machine Learning and Data Science club in UCalgary, I am the workshop director. I am responsible for organizing workshops and teaching students about Machine Learning and Data Science',
+            tags: ["Machine Learning", "Teaching", "Data Science", "Experience/Work"]
+        },
+        {
+            title: 'Internship @ Strato Earth',
+            image: 'images/project3.png',
+            link: 'https://strato.earth/',
+            description: 'I am currently working as a Software Developer Intern at Strato Earth. I am working on a project that involves building a web application for managing and visualizing data from IoT devices',
+            tags: ["Sensors", "Web Dev", "Data Science", "Docker", "AWS", "React", "Experience/Work"]
+        },
+        {
+            title: 'DSML Club Website',
+            image: 'images/project3.png',
+            description: 'Helping build the club\'s website',
+            tags: ["Web Dev", "Data Science", "Typescript", "CSS", "JS", "Experience/Work"]
         },
     ];
 
@@ -81,6 +100,11 @@
             title: 'Detail Oriented',
             description: 
                 'I am detail oriented and I take pride in my work.'
+        },
+        {
+            title: 'Innovative',
+            description: 
+                'I strive to have a novel vision for every project I undertake.'
         },
     ];
 
@@ -121,7 +145,7 @@
 
     // ------------------------------------------------------------------------------ changing text <end>
 
-    let tags = ["All", "Web Dev", "Machine Learning", "App Dev", "Embedded"];
+    let tags = ["All", "Web Dev", "Machine Learning", "App Dev", "Embedded", "Experience/Work"];
     let selectedTags = [];
 
     $: filteredProjects = selectedTags.length === 0 || selectedTags.includes("All") 
@@ -324,66 +348,60 @@
         <h5 class="text-2xl sm:text-3xl font-semibold text-center poppins">The <span class="text-violet-400 poppins">Complete</span> Package</h5>
 
         <div 
-            class="flex flex-col overflow-x-scroll overflow-hidden gap-10 max-w-[900px] max-h-[1000px] mx-auto w-full h-full"
+            class="flex flex-col overflow-hidden gap-10 max-w-[900px] max-h-[1000px] mx-auto w-full h-full "
         >
 
-            <table class="bg-white text-slate-700 rounded text-center">
-                <thead class="border-b border-solid border-slate-200">
-                    <tr class="">
+            <div class="overflow-x-auto custom-scrollbar">
+
+            <table class="bg-white text-slate-700 rounded text-center rounded-2xl ">
+                <thead>
+                    <tr class="border-b border-solid border-slate-200">
                         <th/>
-                        <th class="whitespace-nowrap p-2 px-4">Web Dev</th>
-                        <th class="whitespace-nowrap p-2 px-4">Embedded Dev</th>
-                        <th class="whitespace-nowrap p-2 px-4">Networks/Cloud Dev</th>
-                        <th class="whitespace-nowrap p-2 px-4">App Dev</th>
-                        <th class="whitespace-nowrap bg-violet-700 text-white p-4 px-8">Machine Learning Dev</th>
+                        <th class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">Web Dev</th>
+                        <th class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">Embedded Dev</th>
+                        <th class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">Networks/Cloud Dev</th>
+                        <th class:highlight={selectedTags.includes('App Dev') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">App Dev</th>
+                        <th class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">Machine Learning Dev</th>
                     </tr>
                 </thead>
 
+                <!-- whitespace-nowrap bg-violet-700 text-white p-4 px-8 -->
+
                 <tbody>
                     <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4
+                        <td class="bg-violet-700 text-white"><i class="pl-4
                         pr-8 py-4 font-semibold text-sm whitespace-nowrap">Languages</i></td>
-                        <td class="border border-solid border-gray p-4">JavaScript, TypeScript, HTML, CSS</td>
-                        <td class="border border-solid border-gray p-4">C, C++, Assembly</td>
-                        <td class="border border-solid border-gray p-4">Python, Java</td>
-                        <td class="border border-solid border-gray p-4">Python, C++</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')}  class="border border-solid border-gray p-4">JavaScript, TypeScript, HTML, CSS, CS</td>
+                        <td class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All')} class="border border-solid border-gray p-4">C, C++, Assembly</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Java</td>
+                        <td class:highlight={selectedTags.includes('App Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Java, Kotlin, XML</td>
+                        <td class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Matlab, Python</td>
                     </tr>
 
                     <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4 
-                        pr-8 py-4 font-semibold text-sm whitespace-nowrap">Skills</i></td>
-                        <td class="border border-solid border-gray p-4">Networking</td>
-                        <td class="border border-solid border-gray p-4">Arduino, Raspberry Pi</td>
-                        <td class="border border-solid border-gray p-4">Django, Flask</td>
-                        <td class="border border-solid border-gray p-4">TensorFlow, PyTorch</td>
-                    </tr>
-
-                    <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4 
+                        <td class="bg-violet-700 text-white"><i class="pl-4 
                         pr-8 py-4 font-semibold text-sm whitespace-nowrap">Tools</i></td>
-                        <td class="border border-solid border-gray p-4">React, Svelte</td>
-                        <td class="border border-solid border-gray p-4">Keil, Proteus</td>
-                        <td class="border border-solid border-gray p-4">Azure, Docker</td>
-                        <td class="border border-solid border-gray p-4">Jupyter, Colab</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')}  class="border border-solid border-gray p-4">React, Svelte</td>
+                        <td class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Terminal</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Azure, Docker</td>
+                        <td class:highlight={selectedTags.includes('App Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Firebase</td>
+                        <td class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Matplotlib, Numpy, Matlab, Python</td>
                     </tr>
 
-                    <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4
-                        pr-8 py-4 font-semibold text-sm whitespace-nowrap">IDEs</i></td>
-                        <td class="border border-solid border-gray p-4">VS Code, Docker Desktop</td>
-                        <td class="border border-solid border-gray p-4">STM32Cube, Arduino, VS Code, Matlab</td>
-                        <td class="border border-solid border-gray p-4">Firebase, AWS</td>
-                        <td class="border border-solid border-gray p-4">Keras, Scikit-learn</td>
-                    </tr>
-
-                    <tr class="border-b border-solid border-slate-200">
-                        <td><i class="border border-solid border-white pl-4
-                        pr-8 py-4 font-semibold text-sm whitespace-nowrap">Projects</i></td>
+                    <tr class="">
+                        <td class="bg-violet-700 text-white "><i class=" pl-4
+                        pr-8 py-4 font-semibold text-sm whitespace-nowrap ">IDEs</i></td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">VS Code, Docker Desktop</td>
+                        <td class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All')} class="border border-solid border-gray p-4">STM32Cube, Vim, Nano, Arduino, VS Code, Matlab</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Firebase, Azure, Docker</td>
+                        <td class:highlight={selectedTags.includes('App Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Android Studio</td>
+                        <td class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All')} class="p-4">Matlab, VS Code</td>
                     </tr>
 
                 </tbody>
 
             </table>
+        </div>
 
         </div>
 
@@ -450,5 +468,52 @@
     }
   </style>
 
+<style>
+    /* Custom scrollbar styles */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 12px;
+        height: 15px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px; /* Rounded corners for the track */
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #7c3aed; /* Violet color */
+        border-radius: 10px;
+        border: 3px solid #f1f1f1;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #5b21b6; /* Darker violet color */
+    }
+</style>
+
+<style>
+    .highlight{
+        background-color: #a9a9a9;
+        text: #000;
+        border-radius: 7px; /* Preserve rounded corners */
+    }
+
+    table td, table th {
+        padding: 1em; /* Add padding to each cell */
+        border-radius: 8px; /* Add rounded corners to all cells */
+    }
+
+    .rounded-corner {
+        border-radius: 0 0 0 15px; /* Add rounded corners to the bottom left cell */
+    }
+
+    .round-corners{
+        border-radius: 15px; /* Add rounded corners to all cells */
+    }
+
+</style>
+
+
     <!-- styles end -->
+
 </main>
