@@ -68,6 +68,7 @@
         {
             title: 'Internship @ Strato Earth',
             image: 'images/project3.png',
+            link: 'https://strato.earth/',
             description: 'I am currently working as a Software Developer Intern at Strato Earth. I am working on a project that involves building a web application for managing and visualizing data from IoT devices',
             tags: ["Sensors", "Web Dev", "Data Science", "Docker", "AWS", "React", "Experience/Work"]
         },
