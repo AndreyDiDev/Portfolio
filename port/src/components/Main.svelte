@@ -9,7 +9,7 @@
             image: 'images/project1.png',
             description: 'Unscented Kalman Filter for filtering the position of our rocket, and fusing sensors (Barometer, GPS, IMU) to get a more accurate position estimate',
             link: 'https://github.com/AndreyDiDev/UnscentedKalmanFilter',
-            tags: ["Machine Learning"]
+            tags: ["Machine Learning", "C++", "Sensor Fusion and Filtering", "Embedded"]
         },
         {
             title: 'Tic Tac Toe',
@@ -23,14 +23,14 @@
             image: 'images/project3.png',
             link: 'https://github.com/AndreyDiDev/MadgwickAHRS',
             description: 'Attitude and Heading reference system using Madgwick\'s quaternion based algorithm to filter a 9 dof IMU',
-            tags: ["Sensor Fusion and Filtering", "C++"]
+            tags: ["Sensor Fusion and Filtering", "C++", "Embedded"]
         },
         {
             title: 'Portfolio Website',
             image: 'images/project3.png',
             link: 'https://github.com/AndreyDiDev/Portfolio',
             description: 'This website',
-            tags: ["Web Dev", "Svelte"]
+            tags: ["Web Dev", "Svelte", "JS", "CSS", "HTML", "TailwindCSS"],
         },
         {
             title: 'SPI Driver',
@@ -88,13 +88,13 @@
     import { onMount } from 'svelte';
 
     let currentText = "";
-    let texts = ["Software", "Web", "Machine Learning", "Cloud/Network"];
+    let texts = ["Software", "Web", "Machine Learning", "App", "Embedded"];
     let index = 0;
     let isDeleting = false;
     let typingSpeed = 150; // Speed of typing in milliseconds
-
     function typeWriter() {
         const fullText = texts[index];
+
         if (isDeleting) {
             currentText = fullText.substring(0, currentText.length - 1);
         } else {
@@ -102,10 +102,14 @@
         }
 
         if (!isDeleting && currentText === fullText) {
-            setTimeout(() => isDeleting = true, 2000); // Pause before deleting
+            setTimeout(() => {
+                isDeleting = true;
+                typeWriter();
+            }, 2000); // Pause before deleting
+            return;
         } else if (isDeleting && currentText === "") {
             isDeleting = false;
-            index = (index + 1) % texts.length;
+            index = (index + 1) % texts.length; // Move to the next word
         }
 
         setTimeout(typeWriter, isDeleting ? typingSpeed / 2 : typingSpeed);
@@ -117,7 +121,7 @@
 
     // ------------------------------------------------------------------------------ changing text <end>
 
-    let tags = ["All", "Web Dev", "Machine Learning", "Cloud/Network"];
+    let tags = ["All", "Web Dev", "Machine Learning", "App Dev", "Embedded"];
     let selectedTags = [];
 
     $: filteredProjects = selectedTags.length === 0 || selectedTags.includes("All") 
