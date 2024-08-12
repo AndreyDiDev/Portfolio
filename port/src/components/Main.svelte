@@ -2,7 +2,6 @@
     import { scale } from 'svelte/transition';
     import Step from './Step.svelte';
     
-    
     let steps = [
         {
             title: 'UKF',
@@ -159,6 +158,13 @@
             selectedTags = [...selectedTags, tag];
         }
     }
+
+    export let y; // pass props pass components
+    let tabs=  [
+        { name: 'Projects', link: '#projects' },
+        { name: 'About Me', link: '#about'},
+    ];
+
 </script>
 
 <!-- script end -------------------------------------------------------------------------------->
@@ -184,6 +190,48 @@
         color: rgb(255, 255, 255);
     }
 </style>
+
+<header class={'sticky z-[10] top-0 duration-200 px-6 flex items-center justify-between border border-solid ' + (
+    y>0 ? ' py-4 bg-slate-950 border-violet-950' : 'py-6 bg-transparent border-transparent'
+)}>
+    <h1 class='font-medium pr-8 py-3'>
+        <b class="font-bold poppins">Andrey</b> Dimanchev
+    </h1>
+
+    <section id="tags" class="flex justify-center flex-wrap text-sm sm:text-base">
+        {#each selectedTags as tag}
+            <button 
+                class="tag-button {selectedTags.includes(tag) ? 'active' : ''} m-1 px-2 py-1 text-xs sm:text-sm" 
+                on:click={() => selectTag(tag)}>
+                {tag}
+            </button>
+        {/each}
+    </section>
+
+    <div class="sm:flex ml-auto pr-5 items-center gap-4 hidden pl-4">
+        {#each tabs as tab, index}
+            <a href={tab.link} class='duration-200 hover:text-violet-400'>
+                <p>{tab.name}</p>
+            </a>
+        {/each}
+    </div>
+
+    <a 
+
+        href="#footer"
+        class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white
+        text-slate-950"
+
+    >
+        <div 
+            class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20
+            group-hover:translate-x-full z-0 duration-200 pl-4">
+        </div>
+        <h4 class="relative z-9 text-center ">Contact Me</h4>
+    </a>
+
+
+</header>
 
 <main class="flex flex-col flex-1 p-4">
     <section 
@@ -245,10 +293,10 @@
 
     <section id="projects" class="py-40 lg:py-52 flex flex-col gap-20">
         
-        <section id="tags" class="py-4 flex justify-center">
+        <section id="tags" class="py-4 flex justify-center flex-wrap text-sm sm:text-base">
             {#each tags as tag}
                 <button 
-                    class="tag-button {selectedTags.includes(tag) ? 'active' : ''}" 
+                    class="tag-button {selectedTags.includes(tag) ? 'active' : ''} m-1 px-2 py-1 text-xs sm:text-sm" 
                     on:click={() => selectTag(tag)}>
                     {tag}
                 </button>
@@ -260,27 +308,6 @@
                 A few of my projects
             </h1>
         </div>
-
-        <!-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-10">
-            <Step step={steps[0]}>
-                <p>Attitude and Heading reference system using Madgwick's quaternion based algorithm to filter a 9 dof IMU
-                    <strong class="text-violet-400">C++</strong>
-                </p>
-            </Step>
-
-            <Step step={steps[1]}>
-                <p>Classic Tic Tac Toe game implemented in Assembly language for the 8086 processor
-                    <strong class="text-violet-400">Assembly</strong>
-                </p>
-            </Step>
-
-            <Step step={steps[2]}>
-                <p>Unscented Kalman Filter for tracking a moving object using a LIDAR and RADAR sensor
-                    <strong class="text-violet-400">C++</strong>
-                </p>
-            </Step>
-
-        </div> -->
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {#each filteredProjects as project}
@@ -357,11 +384,11 @@
                 <thead>
                     <tr class="border-b border-solid border-slate-200">
                         <th/>
-                        <th class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">Web Dev</th>
-                        <th class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">Embedded Dev</th>
-                        <th class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">Networks/Cloud Dev</th>
+                        <th class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="whitespace-nowrap p-2 px-4">Web Dev</th>
+                        <th class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="whitespace-nowrap p-2 px-4">Embedded Dev</th>
+                        <th class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="whitespace-nowrap p-2 px-4">Networks/Cloud Dev</th>
                         <th class:highlight={selectedTags.includes('App Dev') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">App Dev</th>
-                        <th class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All')} class="whitespace-nowrap p-2 px-4">Machine Learning Dev</th>
+                        <th class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="whitespace-nowrap p-2 px-4">Machine Learning Dev</th>
                     </tr>
                 </thead>
 
@@ -371,31 +398,31 @@
                     <tr class="border-b border-solid border-slate-200">
                         <td class="bg-violet-700 text-white"><i class="pl-4
                         pr-8 py-4 font-semibold text-sm whitespace-nowrap">Languages</i></td>
-                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')}  class="border border-solid border-gray p-4">JavaScript, TypeScript, HTML, CSS, CS</td>
-                        <td class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All')} class="border border-solid border-gray p-4">C, C++, Assembly</td>
-                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Java</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')}  class="border border-solid border-gray p-4">JavaScript, TypeScript, HTML, CSS, CS</td>
+                        <td class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All')|| selectedTags.includes('Experience/Work')} class="border border-solid border-gray p-4">C, C++, Assembly</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="border border-solid border-gray p-4">Java</td>
                         <td class:highlight={selectedTags.includes('App Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Java, Kotlin, XML</td>
-                        <td class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Matlab, Python</td>
+                        <td class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="border border-solid border-gray p-4">Matlab, Python</td>
                     </tr>
 
                     <tr class="border-b border-solid border-slate-200">
                         <td class="bg-violet-700 text-white"><i class="pl-4 
                         pr-8 py-4 font-semibold text-sm whitespace-nowrap">Tools</i></td>
-                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')}  class="border border-solid border-gray p-4">React, Svelte</td>
-                        <td class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Terminal</td>
-                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Azure, Docker</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')}  class="border border-solid border-gray p-4">React, Svelte</td>
+                        <td class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="border border-solid border-gray p-4">Terminal</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="border border-solid border-gray p-4">Azure, Docker</td>
                         <td class:highlight={selectedTags.includes('App Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Firebase</td>
-                        <td class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Matplotlib, Numpy, Matlab, Python</td>
+                        <td class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="border border-solid border-gray p-4">Matplotlib, Numpy, Matlab, Python</td>
                     </tr>
 
                     <tr class="">
                         <td class="bg-violet-700 text-white "><i class=" pl-4
                         pr-8 py-4 font-semibold text-sm whitespace-nowrap ">IDEs</i></td>
-                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">VS Code, Docker Desktop</td>
-                        <td class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All')} class="border border-solid border-gray p-4">STM32Cube, Vim, Nano, Arduino, VS Code, Matlab</td>
-                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Firebase, Azure, Docker</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="border border-solid border-gray p-4">VS Code, Docker Desktop</td>
+                        <td class:highlight={selectedTags.includes('Embedded') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="border border-solid border-gray p-4">STM32Cube, Vim, Nano, Arduino, VS Code, Matlab</td>
+                        <td class:highlight={selectedTags.includes('Web Dev') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="border border-solid border-gray p-4">Firebase, Azure, Docker</td>
                         <td class:highlight={selectedTags.includes('App Dev') || selectedTags.includes('All')} class="border border-solid border-gray p-4">Android Studio</td>
-                        <td class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All')} class="p-4">Matlab, VS Code</td>
+                        <td class:highlight={selectedTags.includes('Machine Learning') || selectedTags.includes('All') || selectedTags.includes('Experience/Work')} class="p-4">Matlab, VS Code</td>
                     </tr>
 
                 </tbody>
