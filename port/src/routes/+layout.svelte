@@ -2,6 +2,7 @@
     import "../app.css";
     import Header from "../components/Header.svelte";
     import Footer from "../components/Footer.svelte";
+    import Main from "../components/Main.svelte";
 
     let y = 0;
     let innerHeight = 0;
@@ -27,8 +28,8 @@ sm:text-base min-h-screen">
         </button>
     </div>
 
-    <Header y={y}/>
-    <slot />
+    <Main y={y}/>
+    <!-- <slot /> -->
     <Footer/>
 </div>
 
