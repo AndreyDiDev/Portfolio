@@ -1,156 +1,411 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="./icon.png" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
-		integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-	
-	
-	<meta name="viewport" content="width=device-width" />
-	
-		<link href="./_app/immutable/assets/0.CFhzPLcu.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/Main.BihthSjX.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.dLUcPIOT.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.CmFvcBkB.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.CYQgePyd.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.BIOaXLia.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.BjOYavC5.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.C7en4fOP.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Main.CsuXB4Yz.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.CdtKun-B.js">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andrey Dimanchev · Embedded Software</title>
+  <meta name="description" content="Andrey Dimanchev, embedded software developer in Calgary. USB and test infrastructure at Garmin, flight software for the SOAR rocketry team, network anomaly detection research at the University of Calgary.">
+  <meta name="author" content="Andrey Dimanchev">
+  <meta property="og:title" content="Andrey Dimanchev · Embedded Software">
+  <meta property="og:description" content="Firmware, drivers and flight software. Garmin co-op, SOAR rocketry, UCalgary research.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/soar-launch.jpg">
+  <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121316" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
+<body>
+<a class="skip" href="#work">Skip to work</a>
 
-<body data-sveltekit-preload-data="hover" class="bg-slate-950 text-white relative">
-	<div style="display: contents" class="relative z-[1]">  <div class="relative flex flex-col max-w-[1400px] mx-auto w-full text-sm sm:text-base min-h-screen"><div class="fixed bottom-0 w-full duration-200 fle p-10 z-[10]  pointer-events-none opacity-0"><button class="ml-auto rounded-full aspect-square bg-slate-900 text-violet-400 px-3 sm:px-4 hovering:bg-slate-800 cursor-pointer " data-svelte-h="svelte-1hquu3v"><i class="fa-solid fa-arrow-up grid place-items-center aspect-square"></i></button></div>   <header class="sticky z-[10] top-0 duration-200 px-6 flex items-center justify-between border border-solid py-6 bg-transparent border-transparent svelte-z02ta8"><h1 class="font-medium pr-8 py-3" data-svelte-h="svelte-1q93e2k"><b class="font-bold poppins">Andrey</b> Dimanchev</h1> <section id="tags" class="flex justify-center flex-wrap text-sm sm:text-base"></section> <div class="sm:flex ml-auto pr-5 items-center gap-4 hidden pl-4"><a href="#projects" class="duration-200 hover:text-violet-400"><p>Projects</p> </a><a href="#about" class="duration-200 hover:text-violet-400"><p>About Me</p> </a></div> <a href="#footer" class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white text-slate-950" data-svelte-h="svelte-1v0fr5u"><div class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200 pl-4"></div> <h4 class="relative z-9 text-center ">Contact Me</h4></a></header> <main class="flex flex-col flex-1 p-4"><section id="IntroPage" class="grid grid-cols-1 lg:grid-cols-2 gap=10 py=8 sm:py-14"><div class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10"><h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">Hi, I&#39;m <span class="poppins text-violet-400" data-svelte-h="svelte-foi6b9">Andrey</span> Dimanchev 
-                <br>  <span class="poppins text-violet-400" data-svelte-h="svelte-16vsfor">Engineer</span></h2> <p class="text-base sm:text-lg md:text-xl" data-svelte-h="svelte-gs5exu">I thrive on unraveling complex problems. 
-                I&#39;ve invested myself in areas like <span class="font-semibold text-violet-400">Web Dev, Machine 
-                Learning, Embedded Engineering, Cloud platforms...</span> <br> To every project, I bring <span class="text-violet-400">passion and innovation</span>.</p> <a class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950" cursor-pointer href="https://www.linkedin.com/in/andreydimanchev/" target="_blank" data-svelte-h="svelte-sj0jll"><div class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-300"></div> <h4 class="relative z-9">Get in touch →</h4></a></div> <div class="relative shadow-4xl grid place-items-center" data-svelte-h="svelte-1hci7xp"><img src="images/profile3.png" alt="Profile Image" class="object-cover z-[2] max-h-[70vh] "></div> </section> <section id="projects" class="py-40 lg:py-52 flex flex-col gap-20"><section id="tags" class="py-4 flex justify-center flex-wrap text-sm sm:text-base"><button class="tag-button  m-1 px-2 py-1 text-xs sm:text-sm svelte-z02ta8">All </button><button class="tag-button  m-1 px-2 py-1 text-xs sm:text-sm svelte-z02ta8">Web Dev </button><button class="tag-button  m-1 px-2 py-1 text-xs sm:text-sm svelte-z02ta8">Machine Learning </button><button class="tag-button  m-1 px-2 py-1 text-xs sm:text-sm svelte-z02ta8">App Dev </button><button class="tag-button  m-1 px-2 py-1 text-xs sm:text-sm svelte-z02ta8">Embedded </button><button class="tag-button  m-1 px-2 py-1 text-xs sm:text-sm svelte-z02ta8">Experience/Work </button></section> <div class="flex flex-col text-center" data-svelte-h="svelte-1q9t3ud"><h1 class="text-lg sm:text-xl md:text-2xl">A few of my projects</h1></div> <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"><a href="https://github.com/AndreyDiDev/UnscentedKalmanFilter" target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project1.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">UKF</h3> <p class="text-l font-bold">Unscented Kalman Filter for filtering the position of our rocket, and fusing sensors (Barometer, GPS, IMU) to get a more accurate position estimate</p> <strong class="text-violet-400">Tags: Machine Learning, C++, Sensor Fusion and Filtering, Embedded, Experience/Work</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a href="https://github.com/AndreyDiDev/TicTacToeAssembly" target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project2.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">Tic Tac Toe</h3> <p class="text-l font-bold">Classic Tic Tac Toe game implemented in Assembly language for the 8086 processor</p> <strong class="text-violet-400">Tags: Low-Level coding, Assembly</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a href="https://github.com/AndreyDiDev/MadgwickAHRS" target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project3.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">Madgwick Filter</h3> <p class="text-l font-bold">Attitude and Heading reference system using Madgwick's quaternion based algorithm to filter a 9 dof IMU</p> <strong class="text-violet-400">Tags: Sensor Fusion and Filtering, C++, Embedded, Experience/Work</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a href="https://github.com/AndreyDiDev/Portfolio" target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project3.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">Portfolio Website</h3> <p class="text-l font-bold">This website</p> <strong class="text-violet-400">Tags: Web Dev, Svelte, JS, CSS, HTML, TailwindCSS</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a href="https://github.com/AndreyDiDev/SPI_Driver_Repo" target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project3.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">SPI Driver</h3> <p class="text-l font-bold">SPI Driver for an ADC</p> <strong class="text-violet-400">Tags: Embedded, SPI, C++, STM32CubeMX, Experience/Work</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a href="https://github.com/Nicholasm24/calhacksWinnerPOV" target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project3.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">Financial Manager Website</h3> <p class="text-l font-bold">24 hour hackathon project, CalgaryHacks</p> <strong class="text-violet-400">Tags: Web Dev, JS, React, CSS, HTML</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a href="https://github.com/AndreyDiDev/CalgaryHacksProjectX" target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project3.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">Schedule Helper Website</h3> <p class="text-l font-bold">24 hour hackathon project, CalgaryHacks</p> <strong class="text-violet-400">Tags: Web Dev, JS, Firebase, CSS, HTML</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project3.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">Android App</h3> <p class="text-l font-bold">Building Android App with elegant UI and Firebase backend</p> <strong class="text-violet-400">Tags: App Dev, Java, Firebase, XML, Kotlin</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project3.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">Machine Learning and Data Science Workshop Director</h3> <p class="text-l font-bold">At the Machine Learning and Data Science club in UCalgary, I am the workshop director. I am responsible for organizing workshops and teaching students about Machine Learning and Data Science</p> <strong class="text-violet-400">Tags: Machine Learning, Teaching, Data Science, Experience/Work</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a href="https://strato.earth/" target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project3.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">Internship @ Strato Earth</h3> <p class="text-l font-bold">I am currently working as a Software Developer Intern at Strato Earth. I am working on a project that involves building a web application for managing and visualizing data from IoT devices</p> <strong class="text-violet-400">Tags: Sensors, Web Dev, Data Science, Docker, AWS, React, Experience/Work</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a><a target="_blank" class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200"><div class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"><i class="images/project3.png"></i></div> <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">DSML Club Website</h3> <p class="text-l font-bold">Helping build the club's website</p> <strong class="text-violet-400">Tags: Web Dev, Data Science, Typescript, CSS, JS, Experience/Work</strong>  <div class="flex-1 flex justify-between gap-4 items-center" data-svelte-h="svelte-99xgr9"><div class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute afer:top-0 after:h-0 after:right-full after:w-full after:h-full after:bg-white after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"><p class="relative z-4">Go to →</p></div></div></a></div> <div class="flex flex-col gap-2 text-center" data-svelte-h="svelte-dgiphr"><h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">Curious to <span class="poppins text-violet-400">see more?</span></h3></div> <a href="https://github.com/AndreyDiDev" target="_blank" class="mx-auto px-4 py-2 rounded-md border border-solid border-white flex items-center gap-2 -mb-4 sm:-mb-0 -mt-10 hover:border-violet-700 duration-200 " data-svelte-h="svelte-1gy6o8a">Check out my GitHub →</a></section> <section id="about" class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 sm:gap-20 md:gap-24 relative"><div class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4" data-svelte-h="svelte-az88ol"><h6 class="text-lg sm:text-xl md:text-2xl">Want to know more?</h6> <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">A bit <span class="poppins text-violet-400">about me</span></h3></div> <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl" data-svelte-h="svelte-1m4n8qh">I am...</p> <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]"><div class="flex gap-6 sm:gap-8"><p class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold">01</p> <div class="flex flex-col gap-6 sm:gap-8"><h3 class="text-2xl sm:text-3xl md:text-5xl">Passionate</h3> <p>I am passionate about software development and I am always looking to learn new things.</p></div> </div><div class="flex gap-6 sm:gap-8"><p class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold">02</p> <div class="flex flex-col gap-6 sm:gap-8"><h3 class="text-2xl sm:text-3xl md:text-5xl">Team Player</h3> <p>I am a team player and I enjoy working with others to achieve a common goal.</p></div> </div><div class="flex gap-6 sm:gap-8"><p class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold">03</p> <div class="flex flex-col gap-6 sm:gap-8"><h3 class="text-2xl sm:text-3xl md:text-5xl">Problem Solver</h3> <p>I am a problem solver and I enjoy finding creative solutions to challenging problems.</p></div> </div><div class="flex gap-6 sm:gap-8"><p class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold">04</p> <div class="flex flex-col gap-6 sm:gap-8"><h3 class="text-2xl sm:text-3xl md:text-5xl">Detail Oriented</h3> <p>I am detail oriented and I take pride in my work.</p></div> </div><div class="flex gap-6 sm:gap-8"><p class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold">05</p> <div class="flex flex-col gap-6 sm:gap-8"><h3 class="text-2xl sm:text-3xl md:text-5xl">Innovative</h3> <p>I strive to have a novel vision for every project I undertake.</p></div> </div></div> <h5 class="text-2xl sm:text-3xl font-semibold text-center poppins" data-svelte-h="svelte-zm7q7q">The <span class="text-violet-400 poppins">Complete</span> Package</h5> <div class="flex flex-col overflow-hidden gap-10 max-w-[900px] max-h-[1000px] mx-auto w-full h-full "><div class="overflow-x-auto custom-scrollbar"><table class="bg-white text-slate-700 rounded text-center rounded-2xl "><thead><tr class="border-b border-solid border-slate-200"><th></th> <th class="whitespace-nowrap p-2 px-4" data-svelte-h="svelte-14bn5lc">Web Dev</th> <th class="whitespace-nowrap p-2 px-4" data-svelte-h="svelte-9vtt2t">Embedded Dev</th> <th class="whitespace-nowrap p-2 px-4" data-svelte-h="svelte-hg8rkl">Networks/Cloud Dev</th> <th class="whitespace-nowrap p-2 px-4" data-svelte-h="svelte-u2hjki">App Dev</th> <th class="whitespace-nowrap p-2 px-4" data-svelte-h="svelte-orgixj">Machine Learning Dev</th></tr></thead>  <tbody><tr class="border-b border-solid border-slate-200"><td class="bg-violet-700 text-white" data-svelte-h="svelte-19b8kwg"><i class="pl-4 pr-8 py-4 font-semibold text-sm whitespace-nowrap">Languages</i></td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-qubn47">JavaScript, TypeScript, HTML, CSS, CS</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-1cqlrfi">C, C++, Assembly</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-49kv4h">Java</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-1gax3fu">Java, Kotlin, XML</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-1ct57n8">Matlab, Python</td></tr> <tr class="border-b border-solid border-slate-200"><td class="bg-violet-700 text-white" data-svelte-h="svelte-18ddcrs"><i class="pl-4 pr-8 py-4 font-semibold text-sm whitespace-nowrap">Tools</i></td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-eb3v5l">React, Svelte</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-199ens">Terminal</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-qxqqt2">Azure, Docker</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-7mw2n7">Firebase</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-1rppuxj">Matplotlib, Numpy, Matlab, Python</td></tr> <tr class=""><td class="bg-violet-700 text-white " data-svelte-h="svelte-mdv3ni"><i class="pl-4 pr-8 py-4 font-semibold text-sm whitespace-nowrap ">IDEs</i></td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-6mwq3x">VS Code, Docker Desktop</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-yegzhh">STM32Cube, Vim, Nano, Arduino, VS Code, Matlab</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-1i4sz6p">Firebase, Azure, Docker</td> <td class="border border-solid border-gray p-4" data-svelte-h="svelte-zkkm9p">Android Studio</td> <td class="p-4" data-svelte-h="svelte-cml7oq">Matlab, VS Code</td></tr></tbody></table></div></div> <div class="mx-auto -mt-12 italic sm:hidden opacity-50" data-svelte-h="svelte-zp0ubu"><p>Scroll to see more →</p></div> <div class="text-center poppins text-violet-400 text-slate-950 text-2xl sm:text-3xl" data-svelte-h="svelte-tibuku"><p>Why not invest?</p></div></section>  <style data-svelte-h="svelte-lqqugs">.scaled-image {
-        transform: scale(1.1) rotateY(180deg);
-    }</style> <style data-svelte-h="svelte-1gu37t2">.enlarge-on-hover {
-        transition: transform 0.5s ease-in-out;
-    }
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">andrey<span>.</span>dimanchev</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">menu</button>
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#more">Other projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    .enlarge-on-hover:hover {
-        transform: scale(1.4);
-    }</style> <style data-svelte-h="svelte-1s80y8i">.typing-animation {
-        border-right: 2px solid;
-        animation: blink-caret 0.75s step-end infinite;
-    }
+<main id="top">
 
-    @keyframes blink-caret {
-        from, to {
-            border-color: transparent;
-        }
-        50% {
-            border-color: black;
-        }
-    }</style> <style data-svelte-h="svelte-1xlfuzd">.tag {
-      cursor: pointer;
-      padding: 0.5em 1em;
-      margin: 0.5em;
-      border-radius: 5px;
-      background-color: #f0f0f0;
-      transition: background-color 0.3s;
-    }
-  
-    .tag:hover {
-      background-color: #ddd;
-    }
-  
-    .tag.active {
-      background-color: #007bff;
-      color: white;
-    }</style> <style data-svelte-h="svelte-1kdyg9d">/* Custom scrollbar styles */
-    .custom-scrollbar::-webkit-scrollbar {
-        width: 12px;
-        height: 15px;
-    }
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Looking for full-time embedded roles · Calgary, AB</p>
+        <h1>Andrey Dimanchev</h1>
+        <p class="lede">
+          I write software that runs close to the hardware. I spent <strong>16 months at Garmin</strong> bringing up a USB MTP driver and speeding up their device test rig, and I lead the avionics software team for <strong>SOAR</strong>, our university rocketry club. I'm finishing an Honours B.Sc. in Computer Science at the University of Calgary.
+        </p>
+        <div class="hero-links">
+          <a class="btn primary" href="#work">See the work</a>
+          <a class="btn" href="mailto:andreydimanchev@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email me
+          </a>
+          <a class="btn" href="https://github.com/AndreyDiDev" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/andreydimanchev/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/img/soar-launch.jpg" alt="A SOAR student rocket leaving the launch tower on a cloudy day" width="1200" height="1500" fetchpriority="high">
+        <figcaption>A SOAR launch. I've worked on our avionics software since 2023.</figcaption>
+      </figure>
+    </div>
+  </section>
 
-    .custom-scrollbar::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px; /* Rounded corners for the track */
-    }
+  <div class="figures" aria-label="Highlights">
+    <div class="wrap">
+      <div class="figure"><b>4.4×</b><span>faster USB file-transfer testing at Garmin</span></div>
+      <div class="figure"><b>20</b><span>custom STM32 boards running our flight software</span></div>
+      <div class="figure"><b>40%</b><span>better altitude estimate from our sensor-fusion filter</span></div>
+      <div class="figure"><b>11%</b><span>better attack detection in a paper I co-authored (under review)</span></div>
+    </div>
+  </div>
 
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-        background-color: #7c3aed; /* Violet color */
-        border-radius: 10px;
-        border: 3px solid #f1f1f1;
-    }
+  <!-- ===================== WORK ===================== -->
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>Selected work</h2>
+        <p>Longer write-ups of the things I've spent the most time on.</p>
+      </div>
 
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background-color: #5b21b6; /* Darker violet color */
-    }</style> <style data-svelte-h="svelte-18s3jpm">.highlight{
-        background-color: #a9a9a9;
-        text: #000;
-        border-radius: 7px; /* Preserve rounded corners */
-    }
+      <!-- Garmin: MTP -->
+      <article class="case reveal">
+        <div class="case-meta"><span class="org">Garmin · Sensor Core Platform</span><span>Software Engineering Intern</span><span>2025–2026</span></div>
+        <h3>Bringing up a USB MTP driver on GarminOS</h3>
+        <div class="case-grid">
+          <div class="case-text">
+            <p>Garmin wanted products on the Sensor Core Platform to move from USB Mass Storage to MTP, so a computer can browse a device's files without mounting its whole file system. I wrote the MTP driver in C, sitting between the existing USB stack and the file system on an nRF52 running GarminOS.</p>
+            <p>Most of the time went into the parts that didn't work the first time. The worst one was a watchdog reset partway through large transfers. I lined up the USB analyzer capture against what the driver expected and found that a file handle in the first data block was being parsed wrong, so the host kept sending data the MTP state machine wasn't ready for. Fixing the parse fixed the resets.</p>
+            <h4>Also on this team</h4>
+            <ul>
+              <li>Fixed a BLE notification bug.</li>
+              <li>Built a per-thread CPU, stack and memory profiler so we could see which threads were close to their limits.</li>
+              <li>Spent a lot of time in the low-level USB code: the device state machine and DMA.</li>
+            </ul>
+            <div class="tags"><span>C</span><span>GarminOS</span><span>nRF52</span><span>USB / MTP</span><span>DMA</span><span>BLE</span><span>J-Link RTT</span><span>SystemView</span><span>USB analyzer</span></div>
+          </div>
+          <div class="case-media">
+            <figure class="wide"><img class="zoomable" src="assets/img/garmin-mtp-demo.jpg" alt="Screen recording of the MTP driver demo next to a USB analyzer capture" loading="lazy" width="955" height="416"><figcaption>Demoing the driver with the USB analyzer capture alongside.</figcaption></figure>
+            <figure><img class="zoomable" src="assets/img/garmin-debug-tools.jpg" alt="Collage of SystemView, Wireshark and USB analyzer windows" loading="lazy" width="745" height="527"><figcaption>The usual debugging setup: SystemView, Wireshark and the USB analyzer.</figcaption></figure>
+          </div>
+        </div>
+        <figure class="diagram">
+          <svg viewBox="0 0 760 150" role="img" aria-label="Data path: host PC, USB host controller, then on the device the USB stack, the MTP driver and the file system">
+            <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-arrow"/></marker></defs>
+            <rect class="d-box ghost" x="292" y="12" width="458" height="126" rx="8"/>
+            <text class="d-s" x="306" y="32">SCP platform · GarminOS on nRF52</text>
+            <rect class="d-box" x="10" y="58" width="120" height="56" rx="6"/><text class="d-t" x="70" y="82" text-anchor="middle">Host PC</text><text class="d-s" x="70" y="100" text-anchor="middle">MTP initiator</text>
+            <rect class="d-box" x="160" y="58" width="112" height="56" rx="6"/><text class="d-t" x="216" y="82" text-anchor="middle">USB HCI</text><text class="d-s" x="216" y="100" text-anchor="middle">host controller</text>
+            <rect class="d-box" x="306" y="58" width="132" height="56" rx="6"/><text class="d-t" x="372" y="82" text-anchor="middle">USB stack</text><text class="d-s" x="372" y="100" text-anchor="middle">state machine, DMA</text>
+            <rect class="d-box hl" x="468" y="58" width="120" height="56" rx="6"/><text class="d-t" x="528" y="82" text-anchor="middle">MTP driver</text><text class="d-a" x="528" y="100" text-anchor="middle">what I wrote</text>
+            <rect class="d-box" x="618" y="58" width="118" height="56" rx="6"/><text class="d-t" x="677" y="82" text-anchor="middle">File system</text><text class="d-s" x="677" y="100" text-anchor="middle">on device</text>
+            <path class="d-line" d="M130 86 H158" marker-end="url(#ar)"/>
+            <path class="d-line" d="M272 86 H304" marker-end="url(#ar)"/>
+            <path class="d-line hl" d="M438 86 H466" marker-end="url(#ar)"/>
+            <path class="d-line hl" d="M588 86 H616" marker-end="url(#ar)"/>
+          </svg>
+          <figcaption>Where the MTP driver sits. Everything in the dashed box runs on the device.</figcaption>
+        </figure>
+      </article>
 
-    table td, table th {
-        padding: 1em; /* Add padding to each cell */
-        border-radius: 8px; /* Add rounded corners to all cells */
-    }
+      <!-- Garmin: CQ test automation -->
+      <article class="case reveal">
+        <div class="case-meta"><span class="org">Garmin · Connected Quality</span><span>Software Engineering Intern</span><span>2026</span></div>
+        <h3>Making device tests 4.4× faster</h3>
+        <div class="case-grid flip">
+          <div class="case-text">
+            <p>On my second team I worked on the automated tests that check how watches connect to computers over MTP, Mass Storage and Garmin's own USB protocol. I added file transfer over Garmin's USB protocol to the test framework, which made our automated testing <strong>4.4× faster</strong>.</p>
+            <p>I also helped extend the lab setup, which uses Jenkins and labgrid to share test devices across machines. To run the MTP and Mass Storage tests from WSL I passed the USB devices through with usbip, and along the way tracked down a USB bug in WSL itself.</p>
+            <div class="tags"><span>Python</span><span>Jenkins</span><span>labgrid</span><span>usbip</span><span>WSL</span><span>Docker</span><span>bash</span></div>
+          </div>
+          <div class="case-media">
+            <div class="result">
+              <b>4.4×</b>
+              <span>faster automated testing</span>
+              <dl>
+                <div><dt>Change</dt><dd>File transfer over Garmin's USB protocol, built into the test framework</dd></div>
+                <div><dt>Lab</dt><dd>Jenkins + labgrid, devices shared across machines</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </article>
 
-    .rounded-corner {
-        border-radius: 0 0 0 15px; /* Add rounded corners to the bottom left cell */
-    }
+      <!-- SOAR flight software -->
+      <article class="case reveal">
+        <div class="case-meta"><span class="org">SOAR rocketry · UCalgary</span><span>VP Avionics Software, team lead 2025–26</span><span>2023–now</span></div>
+        <h3>Flight software for 20 custom STM32 boards</h3>
+        <div class="case-grid">
+          <div class="case-text">
+            <p>SOAR builds and flies student rockets, and the avionics team designs its own boards. I architected the flight software that runs across 20 of them (STM32 H7 and G4 parts) on top of SOAR OS, our thin layer over FreeRTOS. Tasks talk through FreeRTOS queues, boards talk over CAN, and messages to the ground are protobuf over radio.</p>
+            <p>The flight control board runs the rocket's state machine and sends a heartbeat to the ground. Until launch, the rocket only moves forward on commands from mission control. After launch, timers take over. If the ground heartbeat stops, a watchdog task aborts and vents.</p>
+            <p>Over two years and two flights I led about 20 students on this. A lot of that job is code review, writing down how things are supposed to work, and making it easy for someone new to add a driver without breaking anything. To help with that last part I set up a <a href="https://github.com/UCSOAR/test-automation" target="_blank" rel="noopener">test-automation repo</a> that plugs into each board's project as a submodule and exercises UART, flash, CAN and the sensor drivers.</p>
+            <div class="tags"><span>C / C++</span><span>FreeRTOS</span><span>STM32 HAL</span><span>CAN</span><span>UART</span><span>protobuf</span><span>Altium</span></div>
+            <div class="links"><a href="https://github.com/UCSOAR" target="_blank" rel="noopener">github.com/UCSOAR →</a></div>
+          </div>
+          <div class="case-media">
+            <figure><img class="zoomable" src="assets/img/soar-boards.jpg" alt="Four SOAR avionics PCBs laid out on a table: two purple data acquisition boards, a black peripheral board and a white flight control board" loading="lazy" width="1024" height="956"><figcaption>Some of our avionics boards: two DAQs, the peripheral board (RPB) and the flight control board (FCB).</figcaption></figure>
+            <div class="pair">
+              <figure><img class="zoomable" src="assets/img/soar-board-stack.jpg" alt="Stacked avionics boards lit up with red and blue LEDs during bench testing" loading="lazy" width="768" height="1024"><figcaption>Bench testing the board stack.</figcaption></figure>
+              <figure><img class="zoomable" src="assets/img/soar-avbay.jpg" alt="The Ouroboros avionics bay wiring on display next to the rocket" loading="lazy" width="1000" height="1500"><figcaption>Ouroboros avionics bay.</figcaption></figure>
+            </div>
+          </div>
+        </div>
+        <figure class="diagram">
+          <svg viewBox="0 0 760 236" role="img" aria-label="Rocket state machine. PreLaunch, Fill, Arm, Ignition and Launch advance on ground commands. Burn, Coast, Braking, Descent and Touchdown advance on timers. Abort is reachable from any state.">
+            <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-arrow"/></marker></defs>
+            <text class="d-s" x="10" y="18">ground commands →</text>
+            <g>
+              <rect class="d-box" x="10"  y="30" width="104" height="40" rx="6"/><text class="d-t" x="62"  y="55" text-anchor="middle">PreLaunch</text>
+              <rect class="d-box" x="166" y="30" width="104" height="40" rx="6"/><text class="d-t" x="218" y="55" text-anchor="middle">Fill</text>
+              <rect class="d-box" x="322" y="30" width="104" height="40" rx="6"/><text class="d-t" x="374" y="55" text-anchor="middle">Arm</text>
+              <rect class="d-box" x="478" y="30" width="104" height="40" rx="6"/><text class="d-t" x="530" y="55" text-anchor="middle">Ignition</text>
+              <rect class="d-box hl" x="634" y="30" width="116" height="40" rx="6"/><text class="d-t" x="692" y="55" text-anchor="middle">Launch</text>
+              <path class="d-line" d="M114 50 H164" marker-end="url(#ar2)"/><text class="d-a" x="140" y="44" text-anchor="middle">fill</text>
+              <path class="d-line" d="M270 50 H320" marker-end="url(#ar2)"/><text class="d-a" x="296" y="44" text-anchor="middle">arm ×2</text>
+              <path class="d-line" d="M426 50 H476" marker-end="url(#ar2)"/><text class="d-a" x="452" y="44" text-anchor="middle">ignite</text>
+              <path class="d-line" d="M582 50 H632" marker-end="url(#ar2)"/><text class="d-a" x="608" y="44" text-anchor="middle">confirm</text>
+            </g>
+            <path class="d-line" d="M692 70 V118" marker-end="url(#ar2)"/><text class="d-s" x="700" y="98">timer</text>
+            <g>
+              <rect class="d-box" x="634" y="120" width="116" height="40" rx="6"/><text class="d-t" x="692" y="145" text-anchor="middle">Burn</text>
+              <rect class="d-box" x="478" y="120" width="104" height="40" rx="6"/><text class="d-t" x="530" y="145" text-anchor="middle">Coast</text>
+              <rect class="d-box" x="322" y="120" width="104" height="40" rx="6"/><text class="d-t" x="374" y="145" text-anchor="middle">Braking</text>
+              <rect class="d-box" x="166" y="120" width="104" height="40" rx="6"/><text class="d-t" x="218" y="145" text-anchor="middle">Descent</text>
+              <rect class="d-box" x="10"  y="120" width="104" height="40" rx="6"/><text class="d-t" x="62"  y="145" text-anchor="middle">Touchdown</text>
+              <path class="d-line" d="M634 140 H584" marker-end="url(#ar2)"/><text class="d-s" x="608" y="134" text-anchor="middle">timer</text>
+              <path class="d-line" d="M478 140 H428" marker-end="url(#ar2)"/><text class="d-s" x="452" y="134" text-anchor="middle">timer</text>
+              <path class="d-line" d="M322 140 H272" marker-end="url(#ar2)"/><text class="d-s" x="296" y="134" text-anchor="middle">timer</text>
+              <path class="d-line" d="M166 140 H116" marker-end="url(#ar2)"/><text class="d-s" x="140" y="134" text-anchor="middle">timer</text>
+              <path class="d-line" d="M530 160 V184 H218 V162" marker-end="url(#ar2)"/><text class="d-s" x="374" y="178" text-anchor="middle">skip braking</text>
+            </g>
+            <text class="d-a" x="374" y="116" text-anchor="middle">CAN → air-brake board</text>
+            <rect class="d-box hl" x="10" y="196" width="104" height="32" rx="6"/><text class="d-t" x="62" y="217" text-anchor="middle">Abort</text>
+            <text class="d-s" x="126" y="217">reachable from any state, including when the ground heartbeat is lost</text>
+          </svg>
+          <figcaption>The rocket's states. Ground commands move it forward until launch; after that it runs on timers.</figcaption>
+        </figure>
+      </article>
 
-    .round-corners{
-        border-radius: 15px; /* Add rounded corners to all cells */
-    }</style> </main>  <footer id="footer" class="py-20 sm:py-32 bg-black border-t border-solid border-violet-950 flex flex-col gap-4 sm:gap-8 justify-center items0center" data-svelte-h="svelte-xdm5zn"><h2 class="text-center poppins text-violet-400 text-slate-950 text-2xl sm:text-3xl">Get in touch ↓</h2> <div class="flex flex-col gap-4 items-center justify-center"><p><b class="pr-2">Email</b> <i class="hover:text-violet-400">andreydimanchev@gmail.com</i></p> <p><b class="pr-2">GitHub</b> <a href="https://github.com/AndreyDiDev" target="_blank" class="hover:text-violet-400">AndreyDiDev
-                <sup><span class="text-xs scale-75 pl-0.5"><i class="fa-solid fa-arrow-up-right-from-square text-xs scale-[75%]"></i></span></sup></a></p> <p><b class="pr-2">LinkedIn</b> <a href="https://www.linkedin.com/in/andreydimanchev/" target="_blank" class="hover:text-violet-400">Andrey Dimanchev
-                <sup><span class="text-xs scale-75 pl-0.5"><i class="fa-solid fa-arrow-up-right-from-square text-xs scale-[75%]"></i></span></sup></a></p></div> <p class="text-center poppins text-violet-400 text-slate-950 py-40">Made with <i class="fa-solid fa-heart text-violet-400"></i> <b class="text-center poppins text-violet-400 text-slate-950">by Andrey Dimanchev</b></p></footer></div>  
-			
-			<script>
-				{
-					__sveltekit_wil4nr = {
-						base: new URL(".", location).pathname.slice(0, -1),
-						assets: "/AndreyDimanchev"
-					};
+      <!-- Ground system -->
+      <article class="case reveal">
+        <div class="case-meta"><span class="org">SOAR rocketry</span><span>Ground system and launch network</span></div>
+        <h3>Getting data from the pad to mission control</h3>
+        <div class="case-grid flip">
+          <div class="case-text">
+            <p>On launch day mission control sits well back from the pad. We bridge the gap with a point-to-point wireless link and a PoE switch at the pad, which carries telemetry and up to eight camera feeds.</p>
+            <p>At the pad, the fill system board (our ground motherboard, with daughter boards on CAN) talks over UART to a Raspberry Pi 5. The Pi runs a Python backend and PocketBase, and operators control valves and watch telemetry through a SvelteKit web GUI. I worked on the network side (the live heartbeat, streaming through PocketBase, the camera feeds) and on the embedded side of each board.</p>
+            <div class="tags"><span>Python</span><span>PocketBase</span><span>SvelteKit</span><span>Raspberry Pi</span><span>UART</span><span>CAN</span><span>networking</span></div>
+          </div>
+          <div class="case-media">
+            <figure><img class="zoomable" src="assets/img/soar-launch-gui.jpg" alt="Launch control GUI showing a piping and instrumentation diagram with valve controls" loading="lazy" width="742" height="455"><figcaption>Launch GUI: a live P&amp;ID with valve controls.</figcaption></figure>
+          </div>
+        </div>
+      </article>
 
-					const element = document.currentScript.parentElement;
+      <!-- Filters -->
+      <article class="case reveal">
+        <div class="case-meta"><span class="org">SOAR rocketry</span><span>Sensor fusion</span><span>2024–2025</span></div>
+        <h3>Knowing where the rocket is: altitude and apogee</h3>
+        <div class="case-grid">
+          <div class="case-text">
+            <p>The rocket needs to know its altitude well enough to fire recovery and air brakes at the right time, and no single sensor is good enough on its own. Barometers get noisy near the speed of sound, IMUs drift, and GPS is slow.</p>
+            <p>I designed the filter chain that combines two IMUs, two barometers and GPS:</p>
+            <ul>
+              <li><strong>Madgwick AHRS</strong> tracks orientation with quaternions, so we can rotate acceleration into the earth frame.</li>
+              <li><strong>Everest</strong> blends that vertical acceleration with the barometers, weighted by how noisy each sensor measures.</li>
+              <li><strong>HALO</strong>, an unscented Kalman filter, adds GPS on top.</li>
+            </ul>
+            <p>Apogee is predicted by matching the current flight against simulated flights with a KD-tree. In testing this gave a <strong>40% better altitude estimate</strong> and <strong>95% correct apogee detection</strong>.</p>
+            <div class="tags"><span>C++</span><span>UKF</span><span>Madgwick</span><span>quaternions</span><span>Python</span></div>
+            <div class="links">
+              <a href="https://github.com/AndreyDiDev/UnscentedKalmanFilter" target="_blank" rel="noopener">UKF →</a>
+              <a href="https://github.com/AndreyDiDev/MadgwickAHRS" target="_blank" rel="noopener">Madgwick AHRS →</a>
+              <a href="https://github.com/AndreyDiDev/Apogee-Detection-Everest" target="_blank" rel="noopener">Everest →</a>
+            </div>
+          </div>
+          <div class="case-media">
+            <figure class="plot"><img class="zoomable" src="assets/img/halo-altitude.png" alt="Plot of altitude over time: HALO estimate follows the flight altimeter through apogee at 5,513 metres while the IMU and barometer estimate drifts low" loading="lazy" width="1520" height="680"><figcaption>2024 Taber flight: apogee 5,513 m ASL at 32 s. HALO follows the altimeter on the way down; Everest alone drifts low.</figcaption></figure>
+            <figure class="plot"><img class="zoomable" src="assets/img/halo-madgwick.png" alt="Plot of roll, pitch and yaw from the Madgwick filter during the same flight" loading="lazy" width="1520" height="880"><figcaption>Madgwick attitude from the same flight. Steady through boost and coast, swinging under the parachute.</figcaption></figure>
+          </div>
+        </div>
+      </article>
 
-					const data = [null,null];
+      <!-- Research -->
+      <article class="case reveal">
+        <div class="case-meta"><span class="org">University of Calgary · Dr. Majid Ghaderi</span><span>Undergraduate Research Assistant (NSERC USRA)</span><span>Summers 2025, 2026</span></div>
+        <h3>Catching network attacks as traffic changes</h3>
+        <div class="case-grid">
+          <div class="case-text">
+            <p>Intrusion detectors are usually trained on one snapshot of "normal" traffic, and they get worse as the network changes. In Dr. Ghaderi's networks lab I worked on models that keep up: contrastive learning and autoencoders that adapt as traffic shifts. I'm second author on the resulting paper, <em>Adaptive Anomaly Detection in Evolving Network Environments</em> (under review), which improved attack identification by 11%.</p>
+            <p>For my own part of the project I built a real-time pipeline and a network emulator to test it against: attack and normal traffic from VMs, captured with tcpdump, turned into connection logs by Zeek, streamed through Kafka and classified from packet-level features.</p>
+            <div class="tags"><span>Python</span><span>Zeek</span><span>Kafka</span><span>tcpdump</span><span>VirtualBox</span></div>
+          </div>
+          <div class="case-text">
+            <h4 style="margin-top:0">Now: honours research</h4>
+            <p>This year I'm doing my honours thesis with Dr. Marina Gavrilova on wearable-IMU algorithms for running gait and fatigue, with the model running on an STM32. A paper is in progress, so I'll write it up properly once it's out.</p>
+          </div>
+        </div>
+        <figure class="diagram">
+          <svg viewBox="0 0 760 120" role="img" aria-label="Pipeline: normal and attack VMs, tcpdump capture, Zeek logs, Kafka stream, packet-level features, random forest, alert">
+            <defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-arrow"/></marker></defs>
+            <rect class="d-box" x="4"   y="34" width="96" height="52" rx="6"/><text class="d-t" x="52"  y="57" text-anchor="middle">VMs</text><text class="d-s" x="52" y="74" text-anchor="middle">normal + attack</text>
+            <rect class="d-box" x="114" y="34" width="96" height="52" rx="6"/><text class="d-t" x="162" y="57" text-anchor="middle">tcpdump</text><text class="d-s" x="162" y="74" text-anchor="middle">capture</text>
+            <rect class="d-box" x="224" y="34" width="96" height="52" rx="6"/><text class="d-t" x="272" y="57" text-anchor="middle">Zeek</text><text class="d-s" x="272" y="74" text-anchor="middle">conn logs</text>
+            <rect class="d-box" x="334" y="34" width="96" height="52" rx="6"/><text class="d-t" x="382" y="57" text-anchor="middle">Kafka</text><text class="d-s" x="382" y="74" text-anchor="middle">stream</text>
+            <rect class="d-box hl" x="444" y="34" width="96" height="52" rx="6"/><text class="d-t" x="492" y="57" text-anchor="middle">Features</text><text class="d-s" x="492" y="74" text-anchor="middle">packet-level</text>
+            <rect class="d-box hl" x="554" y="34" width="96" height="52" rx="6"/><text class="d-t" x="602" y="57" text-anchor="middle">Classifier</text><text class="d-s" x="602" y="74" text-anchor="middle">random forest</text>
+            <rect class="d-box" x="664" y="34" width="92" height="52" rx="6"/><text class="d-t" x="710" y="57" text-anchor="middle">Alert</text><text class="d-s" x="710" y="74" text-anchor="middle">flagged flow</text>
+            <path class="d-line" d="M100 60 H112" marker-end="url(#ar3)"/>
+            <path class="d-line" d="M210 60 H222" marker-end="url(#ar3)"/>
+            <path class="d-line" d="M320 60 H332" marker-end="url(#ar3)"/>
+            <path class="d-line" d="M430 60 H442" marker-end="url(#ar3)"/>
+            <path class="d-line hl" d="M540 60 H552" marker-end="url(#ar3)"/>
+            <path class="d-line hl" d="M650 60 H662" marker-end="url(#ar3)"/>
+          </svg>
+          <figcaption>My real-time detection pipeline.</figcaption>
+        </figure>
+      </article>
+    </div>
 
-					Promise.all([
-						import("./_app/immutable/entry/start.dLUcPIOT.js"),
-						import("./_app/immutable/entry/app.BIOaXLia.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 2],
-							data,
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
+    <div class="strip" aria-label="Photos from SOAR">
+      <figure><img class="zoomable" src="assets/img/soar-carry.jpg" alt="Team members carrying the rocket to the launch rail in the desert" loading="lazy" width="1800" height="810"><figcaption>Carrying the rocket out to the rail, June 2024.</figcaption></figure>
+      <figure><img class="zoomable" src="assets/img/soar-bench.jpg" alt="Team members assembling the avionics bay on a workbench" loading="lazy" width="1600" height="1200"><figcaption>Avionics bay integration, May 2026.</figcaption></figure>
+      <figure><img class="zoomable" src="assets/img/soar-rail.jpg" alt="A red and white SOAR rocket lying on the launch rail" loading="lazy" width="1600" height="1200"><figcaption>On the rail before a launch.</figcaption></figure>
+    </div>
+  </section>
 
-	<div class="absolute min-h-screen top-0 left-0 w-full z-[-1] opacity-70">
-		<div id="particles-js" class="absolute inset-0" />
-	</div>
-	<script>
-		particlesJS.load("particles-js", "assets/particles.json", function () {
-			console.log("callback - particles.js config loaded");
-		});
-	</script>
+  <!-- ===================== SMALLER PROJECTS ===================== -->
+  <section class="block" id="more">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">02</span>
+        <h2>Other projects</h2>
+        <p>Smaller things, mostly from courses, hackathons and weekends.</p>
+      </div>
+      <table class="archive">
+        <thead><tr><th>Year</th><th>Project</th><th>What it is</th><th>Built with</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>2026</td><td class="what">SOAR test automation</td><td class="desc">Hardware-in-the-loop test framework for our boards. Added to a board's project as a git submodule; covers UART, flash, CAN and sensor drivers.</td><td class="stack">Python, C++</td><td class="go"><a href="https://github.com/UCSOAR/test-automation" target="_blank" rel="noopener">repo →</a></td></tr>
+          <tr><td>Course</td><td class="what">TCP and UDP socket servers</td><td class="desc">Client-server apps on Linux: file transfer, many clients at once, and reliable delivery on top of UDP.</td><td class="stack">C, Linux sockets</td><td class="go"></td></tr>
+          <tr><td>2024</td><td class="what">SPI driver for an ADC</td><td class="desc">A small driver for reading an external ADC over SPI on an STM32.</td><td class="stack">C, STM32CubeMX</td><td class="go"><a href="https://github.com/AndreyDiDev/SPI_Driver_Repo" target="_blank" rel="noopener">repo →</a></td></tr>
+          <tr><td>2024</td><td class="what">Byte compression</td><td class="desc">Compresses a byte array two ways: a simple scheme and a more involved custom one, for comparison.</td><td class="stack">Python</td><td class="go"><a href="https://github.com/AndreyDiDev/Custom_Byte_Compression" target="_blank" rel="noopener">repo →</a></td></tr>
+          <tr><td>2024</td><td class="what">Tic-tac-toe in assembly</td><td class="desc">The game in assembly and C, with my own routine for deciding the winner quickly.</td><td class="stack">Assembly, C</td><td class="go"><a href="https://github.com/AndreyDiDev/TicTacToeAssembly" target="_blank" rel="noopener">repo →</a></td></tr>
+          <tr><td>2023</td><td class="what">CalgaryHacks: two 24-hour builds</td><td class="desc">A scheduling helper and a personal finance tracker, built with teammates over a weekend each.</td><td class="stack">JavaScript, React, Firebase</td><td class="go"><a href="https://github.com/AndreyDiDev/CalgaryHacksProjectX" target="_blank" rel="noopener">repo →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">03</span>
+        <h2>Experience</h2>
+        <p>Most recent first.</p>
+      </div>
+      <ol class="timeline">
+        <li class="reveal">
+          <div class="when">Jun 2026 – Apr 2027</div>
+          <div><p class="role">Honours Researcher</p><p class="where">University of Calgary · Dr. Marina Gavrilova</p><p class="note">Wearable-IMU algorithms for running gait and fatigue, running on an STM32. Paper in progress.</p></div>
+        </li>
+        <li class="reveal">
+          <div class="when">May 2025 – Aug 2026</div>
+          <div><p class="role">Software Engineering Intern (16-month co-op)</p><p class="where">Garmin · Cochrane, AB</p><p class="note">Sensor Core Platform: USB MTP driver bring-up, BLE fix, per-thread profiler on GarminOS. Connected Quality: file transfer over Garmin's USB protocol in the test framework (4.4× faster), Jenkins and labgrid lab setup, USB passthrough into WSL.</p></div>
+        </li>
+        <li class="reveal">
+          <div class="when">Summers 2025, 2026</div>
+          <div><p class="role">Undergraduate Research Assistant</p><p class="where">University of Calgary · Dr. Majid Ghaderi, networks lab</p><p class="note">Adaptive anomaly detection for changing networks. Second author on a paper under review; built a real-time detection pipeline and a network emulator.</p></div>
+        </li>
+        <li class="reveal">
+          <div class="when">Sep 2023 – now</div>
+          <div><p class="role">VP Avionics Software (team lead 2025–26)</p><p class="where">SOAR, Student Organization for Aerospace Research</p><p class="note">Flight software architecture for 20 STM32 boards, the altitude filter chain, ground network work. Led about 20 students over two years and two flights.</p></div>
+        </li>
+        <li class="reveal">
+          <div class="when">Jul 2024 – now</div>
+          <div><p class="role">Workshop Director</p><p class="where">Data Science and Machine Learning Club, UCalgary</p><p class="note">Plan and teach workshops on machine learning, computer vision and data engineering.</p></div>
+        </li>
+        <li class="reveal">
+          <div class="when">Jul – Sep 2024</div>
+          <div><p class="role">Junior DevOps and Network Software Developer</p><p class="where">Strato Earth · Calgary</p><p class="note">Worked on a peer-to-peer network and deployed services in Docker on Linux and Azure.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">04</span>
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <figure>
+          <img class="zoomable" src="assets/img/garmin-desk.jpg" alt="Andrey at his desk at Garmin" loading="lazy" width="1400" height="1050">
+          <figcaption>At work in Cochrane, 2026.</figcaption>
+        </figure>
+        <div class="about-text">
+          <p>I'm in the last year of an Honours Computer Science degree at the University of Calgary, with a minor in Management and Society. Most of what I actually use day to day I learned by getting things working on real hardware: reading datasheets, going through analyzer captures, and working out why a board keeps resetting.</p>
+          <p>I like problems where the software and the physical world meet, whether that's a USB transfer, a filter fed by noisy sensors, or a rocket that has to decide on its own when to open its air brakes. I'm looking for a full-time embedded or systems role, ideally in Calgary or in aerospace.</p>
+          <div class="skills">
+            <dl><dt>Languages</dt><dd>C, C++, Python, Assembly, TypeScript, Java</dd></dl>
+            <dl><dt>Embedded</dt><dd>FreeRTOS, STM32 HAL, nRF52, drivers, DMA, threads and synchronization</dd></dl>
+            <dl><dt>Buses and protocols</dt><dd>USB (MTP, mass storage), CAN, UART, SPI, RS-485, BLE, TCP/UDP</dd></dl>
+            <dl><dt>Debugging</dt><dd>GDB, J-Link RTT, SystemView, USB analyzers, Wireshark</dd></dl>
+            <dl><dt>Hardware</dt><dd>Altium, soldering, bringing up custom PCBs</dd></dl>
+            <dl><dt>Tooling</dt><dd>Git, Docker, Jenkins, labgrid, Linux, Zeek, Kafka</dd></dl>
+          </div>
+          <div class="awards">
+            <h4>Education and awards</h4>
+            <ul>
+              <li>Honours B.Sc. Computer Science, University of Calgary, 2022–2027 · GPA 3.74</li>
+              <li>NSERC Undergraduate Student Research Award, 2025 and 2026</li>
+              <li>President's Admission Scholarship · Dean's List</li>
+              <li>Alexander Rutherford and Jason Lang scholarships</li>
+              <li>DELF diploma (French)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>If you're hiring for embedded work, I'd like to hear about it.</h2>
+      <p>Email is the fastest way to reach me. I'm in Calgary and happy to talk about full-time roles starting after I graduate in 2027.</p>
+      <div class="contact-links">
+        <a href="mailto:andreydimanchev@gmail.com"><small>Email</small>andreydimanchev@gmail.com</a>
+        <a href="https://www.linkedin.com/in/andreydimanchev/" target="_blank" rel="noopener"><small>LinkedIn</small>in/andreydimanchev</a>
+        <a href="https://github.com/AndreyDiDev" target="_blank" rel="noopener"><small>GitHub</small>AndreyDiDev</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Andrey Dimanchev</span>
+    <span>Built by hand with HTML, CSS and a little JavaScript.</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
 </body>
-
 </html>
