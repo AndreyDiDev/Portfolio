@@ -87,7 +87,7 @@
         <h3>Bringing up a USB MTP driver on GarminOS</h3>
         <div class="case-grid">
           <div class="case-text">
-            <p>Garmin wanted products on the Sensor Core Platform to move from USB Mass Storage to MTP, so a computer can browse a device's files without mounting its whole file system. I wrote the MTP driver in C, sitting between the existing USB stack and the file system on an nRF52 running GarminOS.</p>
+            <p>Garmin wanted products on the Sensor Core Platform to move from UMS (USB Mass Storage) to MTP (Media Transfer Protocol), so a computer can browse a device's files without mounting its whole file system. I wrote the MTP driver in C, sitting between the existing USB stack and the file system on an nRF52 running GarminOS.</p>
             <p>Most of the time went into the parts that didn't work the first time. The worst one was a watchdog reset partway through large transfers. I lined up the USB analyzer capture against what the driver expected and found that a file handle in the first data block was being parsed wrong, so the host kept sending data the MTP state machine wasn't ready for. Fixing the parse fixed the resets.</p>
             <h4>Also on this team</h4>
             <ul>
@@ -128,7 +128,7 @@
         <div class="case-grid flip">
           <div class="case-text">
             <p>On my second team I worked on the automated tests that check how watches connect to computers over MTP, Mass Storage and Garmin's own USB protocol. I added file transfer over Garmin's USB protocol to the test framework, which made our automated testing <strong>4.4× faster</strong>.</p>
-            <p>I also helped extend the lab setup, which uses Jenkins and labgrid to share test devices across machines. To run the MTP and Mass Storage tests from WSL I passed the USB devices through with usbip, and along the way tracked down a USB bug in WSL itself.</p>
+            <p>I also networked test devices into our lab setup, which uses Jenkins and labgrid to share devices across machines, and ran regression and hardware-in-the-loop tests on them. To run the MTP and Mass Storage tests from WSL I passed the USB devices through with usbip, and along the way tracked down a USB bug in WSL itself.</p>
             <div class="tags"><span>Python</span><span>Jenkins</span><span>labgrid</span><span>usbip</span><span>WSL</span><span>Docker</span><span>bash</span></div>
           </div>
           <div class="case-media">
@@ -230,6 +230,7 @@
               <li><strong>HALO</strong>, an unscented Kalman filter, adds GPS on top.</li>
             </ul>
             <p>Apogee is predicted by matching the current flight against simulated flights with a KD-tree. In testing this gave a <strong>40% better altitude estimate</strong> and <strong>95% correct apogee detection</strong>.</p>
+            <p>We recently upgraded state estimation and apogee detection to be fault tolerant. With the re-architected design the pipeline now logs at <strong>20 Hz</strong>, and we also estimated the filter covariances.</p>
             <div class="tags"><span>C++</span><span>UKF</span><span>Madgwick</span><span>quaternions</span><span>Python</span></div>
             <div class="links">
               <a href="https://github.com/AndreyDiDev/UnscentedKalmanFilter" target="_blank" rel="noopener">UKF →</a>
@@ -256,7 +257,7 @@
           </div>
           <div class="case-text">
             <h4 style="margin-top:0">Now: honours research</h4>
-            <p>This year I'm doing my honours thesis with Dr. Marina Gavrilova on wearable-IMU algorithms for running gait and fatigue, with the model running on an STM32. A paper is in progress, so I'll write it up properly once it's out.</p>
+            <p>This year I'm doing my honours thesis with Dr. Marina Gavrilova on wearable-IMU algorithms for running gait and fatigue, fusing wearable IMUs with pose estimation from video, with the model running on an STM32. A paper is in progress, so I'll write it up properly once it's out.</p>
           </div>
         </div>
         <figure class="diagram">
@@ -300,6 +301,10 @@
         <thead><tr><th>Year</th><th>Project</th><th>What it is</th><th>Built with</th><th></th></tr></thead>
         <tbody>
           <tr><td>2026</td><td class="what">SOAR test automation</td><td class="desc">Hardware-in-the-loop test framework for our boards. Added to a board's project as a git submodule; covers UART, flash, CAN and sensor drivers.</td><td class="stack">Python, C++</td><td class="go"><a href="https://github.com/UCSOAR/test-automation" target="_blank" rel="noopener">repo →</a></td></tr>
+          <tr><td>Course</td><td class="what">Recipe-sharing web app (SENG 513)</td><td class="desc">Multi-user app for sharing recipes and ingredients, with REST APIs connecting our database to the front end and username and password login.</td><td class="stack">REST APIs, database</td><td class="go"></td></tr>
+          <tr><td>Course</td><td class="what">Machine learning from scratch</td><td class="desc">Built the core ML algorithms in Python in Machine Learning, then trained CNNs in Keras in Artificial Intelligence.</td><td class="stack">Python, Keras</td><td class="go"></td></tr>
+          <tr><td>Project</td><td class="what">Eye and blink detection</td><td class="desc">Detects eyes and blinks from a camera feed.</td><td class="stack">Python, OpenCV</td><td class="go"></td></tr>
+          <tr><td>Club</td><td class="what">DSMLC website</td><td class="desc">Web app for the Data Science and Machine Learning Club.</td><td class="stack">Web</td><td class="go"></td></tr>
           <tr><td>Course</td><td class="what">TCP and UDP socket servers</td><td class="desc">Client-server apps on Linux: file transfer, many clients at once, and reliable delivery on top of UDP.</td><td class="stack">C, Linux sockets</td><td class="go"></td></tr>
           <tr><td>2024</td><td class="what">SPI driver for an ADC</td><td class="desc">A small driver for reading an external ADC over SPI on an STM32.</td><td class="stack">C, STM32CubeMX</td><td class="go"><a href="https://github.com/AndreyDiDev/SPI_Driver_Repo" target="_blank" rel="noopener">repo →</a></td></tr>
           <tr><td>2024</td><td class="what">Byte compression</td><td class="desc">Compresses a byte array two ways: a simple scheme and a more involved custom one, for comparison.</td><td class="stack">Python</td><td class="go"><a href="https://github.com/AndreyDiDev/Custom_Byte_Compression" target="_blank" rel="noopener">repo →</a></td></tr>
@@ -363,12 +368,14 @@
           <p>I'm in the last year of an Honours Computer Science degree at the University of Calgary, with a minor in Management and Society. Most of what I actually use day to day I learned by getting things working on real hardware: reading datasheets, going through analyzer captures, and working out why a board keeps resetting.</p>
           <p>I like problems where the software and the physical world meet, whether that's a USB transfer, a filter fed by noisy sensors, or a rocket that has to decide on its own when to open its air brakes. I'm looking for a full-time embedded or systems role, ideally in Calgary or in aerospace.</p>
           <div class="skills">
-            <dl><dt>Languages</dt><dd>C, C++, Python, Assembly, TypeScript, Java</dd></dl>
+            <dl><dt>Languages</dt><dd>C, C++, Python, Assembly, TypeScript, Java, SQL</dd></dl>
             <dl><dt>Embedded</dt><dd>FreeRTOS, STM32 HAL, nRF52, drivers, DMA, threads and synchronization</dd></dl>
             <dl><dt>Buses and protocols</dt><dd>USB (MTP, mass storage), CAN, UART, SPI, RS-485, BLE, TCP/UDP</dd></dl>
             <dl><dt>Debugging</dt><dd>GDB, J-Link RTT, SystemView, USB analyzers, Wireshark</dd></dl>
             <dl><dt>Hardware</dt><dd>Altium, soldering, bringing up custom PCBs</dd></dl>
             <dl><dt>Tooling</dt><dd>Git, Docker, Jenkins, labgrid, Linux, Zeek, Kafka</dd></dl>
+            <dl><dt>ML and vision</dt><dd>ML algorithms from scratch in Python, CNNs (Keras), autoencoders, OpenCV, pose estimation</dd></dl>
+            <dl><dt>Web</dt><dd>Svelte, REST APIs, PocketBase</dd></dl>
           </div>
           <div class="awards">
             <h4>Education and awards</h4>
