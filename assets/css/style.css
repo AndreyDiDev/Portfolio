@@ -274,3 +274,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .research-figs figure { margin: 0; }
 .research-figs img { width: 100%; height: auto; background: #fff; padding: 6px; border: 1px solid var(--rule); }
 @media (max-width: 860px) { .research-figs { grid-template-columns: 1fr; } .research-figs figure:last-child img { max-width: 360px; } }
+
+/* Close-up headshot in About */
+.about-grid img.about-headshot { aspect-ratio: 4 / 5; object-position: 50% 30%; max-width: 380px; width: 100%; }
