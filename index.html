@@ -258,6 +258,7 @@
           <div class="case-text">
             <h4 style="margin-top:0">Now: honours research</h4>
             <p>This year I'm doing my honours thesis with Dr. Marina Gavrilova on wearable-IMU algorithms for running gait and fatigue, fusing wearable IMUs with pose estimation from video, with the model running on an STM32. A paper is in progress, so I'll write it up properly once it's out.</p>
+            <p>First results: from an indoor running dataset, I extract each runner's shank IMU signals, detect every stride from foot contacts, and compute stride metrics. The plots are below.</p>
           </div>
         </div>
         <figure class="diagram">
@@ -280,6 +281,11 @@
           <figcaption>My real-time detection pipeline.</figcaption>
         </figure>
         <figure class="plot"><img class="zoomable" src="assets/img/research-shift.png" alt="Density of one traffic feature in the CIC-IDS 2017 and 2019 datasets, before and after SMOTE and ADASYN oversampling" loading="lazy" width="1184" height="484"><figcaption>Why the detector has to adapt: the same traffic feature in 2017 vs 2019 attack data (TCP: MSSQL, SSDP, SYN flood). The distributions barely overlap, and oversampling with SMOTE or ADASYN does not close the gap.</figcaption></figure>
+        <div class="research-figs">
+          <figure><img class="zoomable" src="assets/img/bio-gait.png" alt="Right shank angular velocity and vertical acceleration over three strides at 11 km/h, with ground contact shaded" loading="lazy" width="1350" height="690"><figcaption>Honours research: raw shank IMU over three strides at 11 km/h, with ground contact shaded. These are the signals my algorithms start from.</figcaption></figure>
+          <figure><img class="zoomable" src="assets/img/bio-fatigue.png" alt="Stride time and peak shank angular velocity for every stride of one runner's fatigue run" loading="lazy" width="1350" height="690"><figcaption>Every stride of one runner's fatigue run: stride time stays almost flat while peak shank swing velocity drifts upward.</figcaption></figure>
+          <figure><img class="zoomable" src="assets/img/bio-speed.png" alt="Ground contact time at 9 and 11 km/h for 10 runners" loading="lazy" width="660" height="690"><figcaption>Contact time for 10 runners: every runner spends less time on the ground at 11 km/h.</figcaption></figure>
+        </div>
       </article>
     </div>
 

@@ -268,3 +268,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .hero-name { display: flex; align-items: center; gap: clamp(14px, 2.5vw, 22px); margin: 0 0 24px; }
 .hero-name h1 { margin: 0; }
 .headshot { width: clamp(72px, 10vw, 112px); height: clamp(72px, 10vw, 112px); border-radius: 50%; object-fit: cover; flex: none; border: 1px solid rgba(127,127,127,.35); }
+
+/* Honours research plots */
+.research-figs { display: grid; grid-template-columns: 2fr 2fr 1fr; gap: 14px; margin-top: 18px; align-items: start; }
+.research-figs figure { margin: 0; }
+.research-figs img { width: 100%; height: auto; background: #fff; padding: 6px; border: 1px solid var(--rule); }
+@media (max-width: 860px) { .research-figs { grid-template-columns: 1fr; } .research-figs figure:last-child img { max-width: 360px; } }
