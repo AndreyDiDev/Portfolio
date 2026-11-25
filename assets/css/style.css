@@ -263,3 +263,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .result dl div { display: grid; grid-template-columns: 70px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; }
 .result dt { font: 600 12px/1.6 var(--mono); text-transform: uppercase; letter-spacing: .07em; color: var(--ink-3); }
 .result dd { margin: 0; color: var(--ink-2); }
+
+/* Headshot next to the name */
+.hero-name { display: flex; align-items: center; gap: clamp(14px, 2.5vw, 22px); margin: 0 0 24px; }
+.hero-name h1 { margin: 0; }
+.headshot { width: clamp(72px, 10vw, 112px); height: clamp(72px, 10vw, 112px); border-radius: 50%; object-fit: cover; flex: none; border: 1px solid rgba(127,127,127,.35); }

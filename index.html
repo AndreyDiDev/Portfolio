@@ -42,7 +42,7 @@
     <div class="wrap">
       <div>
         <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Looking for full-time embedded roles · Calgary, AB</p>
-        <h1>Andrey Dimanchev</h1>
+        <div class="hero-name"><img class="headshot" src="assets/img/headshot.jpg" alt="Andrey Dimanchev" width="600" height="600"><h1>Andrey Dimanchev</h1></div>
         <p class="lede">
           I write software that runs close to the hardware. I spent <strong>16 months at Garmin</strong> bringing up a USB MTP driver and speeding up their device test rig, and I lead the avionics software team for <strong>SOAR</strong>, our university rocketry club. I'm finishing an Honours B.Sc. in Computer Science at the University of Calgary.
         </p>
@@ -65,7 +65,7 @@
 
   <div class="figures" aria-label="Highlights">
     <div class="wrap">
-      <div class="figure"><b>4.4×</b><span>faster USB file-transfer testing at Garmin</span></div>
+      <div class="figure"><b>4.4×</b><span>faster testing from my custom USB protocol file transfer tool at Garmin</span></div>
       <div class="figure"><b>20</b><span>custom STM32 boards running our flight software</span></div>
       <div class="figure"><b>40%</b><span>better altitude estimate from our sensor-fusion filter</span></div>
       <div class="figure"><b>11%</b><span>better attack detection in a paper I co-authored (under review)</span></div>
@@ -127,7 +127,7 @@
         <h3>Making device tests 4.4× faster</h3>
         <div class="case-grid flip">
           <div class="case-text">
-            <p>On my second team I worked on the automated tests that check how watches connect to computers over MTP, Mass Storage and Garmin's own USB protocol. I added file transfer over Garmin's USB protocol to the test framework, which made our automated testing <strong>4.4× faster</strong>.</p>
+            <p>On my second team I worked on the automated tests that check how watches connect to computers over MTP, Mass Storage and Garmin's own USB protocol. I built a file transfer tool over Garmin's custom USB protocol for the test framework, which made our automated testing <strong>4.4× faster</strong>.</p>
             <p>I also networked test devices into our lab setup, which uses Jenkins and labgrid to share devices across machines, and ran regression and hardware-in-the-loop tests on them. To run the MTP and Mass Storage tests from WSL I passed the USB devices through with usbip, and along the way tracked down a USB bug in WSL itself.</p>
             <div class="tags"><span>Python</span><span>Jenkins</span><span>labgrid</span><span>usbip</span><span>WSL</span><span>Docker</span><span>bash</span></div>
           </div>
@@ -136,7 +136,7 @@
               <b>4.4×</b>
               <span>faster automated testing</span>
               <dl>
-                <div><dt>Change</dt><dd>File transfer over Garmin's USB protocol, built into the test framework</dd></div>
+                <div><dt>Change</dt><dd>A file transfer tool over Garmin's custom USB protocol, built into the test framework</dd></div>
                 <div><dt>Lab</dt><dd>Jenkins + labgrid, devices shared across machines</dd></div>
               </dl>
             </div>
@@ -330,7 +330,7 @@
         </li>
         <li class="reveal">
           <div class="when">May 2025 – Aug 2026</div>
-          <div><p class="role">Software Engineering Intern (16-month co-op)</p><p class="where">Garmin · Cochrane, AB</p><p class="note">Sensor Core Platform: USB MTP driver bring-up, BLE fix, per-thread profiler on GarminOS. Connected Quality: file transfer over Garmin's USB protocol in the test framework (4.4× faster), Jenkins and labgrid lab setup, USB passthrough into WSL.</p></div>
+          <div><p class="role">Software Engineering Intern (16-month co-op)</p><p class="where">Garmin · Cochrane, AB</p><p class="note">Sensor Core Platform: USB MTP driver bring-up, BLE fix, per-thread profiler on GarminOS. Connected Quality: custom USB protocol file transfer tool for the test framework (4.4× faster testing), Jenkins and labgrid lab setup, USB passthrough into WSL.</p></div>
         </li>
         <li class="reveal">
           <div class="when">Summers 2025, 2026</div>
